@@ -1,9 +1,13 @@
+mod TS_System;
+
 use winit::{
     application::ApplicationHandler,
     event::WindowEvent,
     event_loop::{ActiveEventLoop, ControlFlow, EventLoop},
     window::{Window, WindowId},
 };
+
+use std::env;
 
 #[derive(Default)]
 struct App {
@@ -41,7 +45,19 @@ impl ApplicationHandler for App {
     }
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+fn main() -> Result<(), Box<dyn std::error::Error>>
+{
+	// Gets arguments passed to program | ['PAR_StrVec_Arguments']<LM>
+	let PAR_StrVec_Arguments: Vec<String>	= env::args().collect();
+
+	for I_Argument in PAR_StrVec_Arguments
+	{
+		if(I_Argument	== "-sys")
+		{
+			TS_System::F_Main_RNil();
+		}
+	}
+
     let event_loop = EventLoop::new()?;
     event_loop.set_control_flow(ControlFlow::Wait);
     
