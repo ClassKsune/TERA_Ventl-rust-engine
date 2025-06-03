@@ -1,0 +1,1 @@
+﻿struct Vector2
