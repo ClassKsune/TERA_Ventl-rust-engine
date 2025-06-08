@@ -10,7 +10,7 @@ Scripted by: 		Matěj Zahradník [The_Universality] - © Matěj Zahradník
 Created at:			15:09 | 03.06.2025 [D.M.Y]
 ------------------------------
 Script type:		Definition Script (DS)
-Script purpose:		Handles CLI program system & Arguments
+Script purpose:		Defines GameObjects
 :<I>*/
 
 // Script Info !REM

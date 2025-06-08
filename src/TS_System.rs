@@ -28,6 +28,7 @@ Script purpose:		Handles CLI program system & Arguments
 
 //<S>:
 mod main;
+mod Modules;
 
 use {std::{self, env, fs::File, io::Read, ops::Add, path::{Path, PathBuf}, process::exit}};
 //:<S>
