@@ -104,6 +104,8 @@ impl Vector3
 	{
 		Vector3 { X: PAR_X_Isize, Y: PAR_Y_Isize, Z: PAR_Z_Isize }
 	}
+	//:<S>
+	//---
 }
 
 //PRT: Primitive3D implementation

@@ -75,26 +75,25 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <span title="Script line: 104" class="Class_LineNumber">104:	|</span>		<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 105" class="Class_LineNumber">105:	|</span>			Vector<span class="Class_Number">3</span> <span class="Class_BracketsLVL1">{</span> X: PAR_X_Isize, Y: PAR_Y_Isize, Z: PAR_Z_Isize <span class="Class_BracketsLVL1">}</span>
 <span title="Script line: 106" class="Class_LineNumber">106:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 107" class="Class_LineNumber">107:	|</span>	<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 109" class="Class_LineNumber">109:	|</span>	<span class="Class_CommentTagWord">//PRT: Primitive3D implementation</span>
-<span title="Script line: 110" class="Class_LineNumber">110:	|</span>	<span class="Class_CommentTagWord">//&ltLM></span>
-<span title="Script line: 111" class="Class_LineNumber">111:	|</span>	impl Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 113" class="Class_LineNumber">113:	|</span>		/*&ltF>:CAT:New
-<span title="Script line: 114" class="Class_LineNumber">114:	|</span>		--Description--: Creates a <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_BracketsLVL0">[</span>'Primitive<span class="Class_Number">3</span>D'<span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 115" class="Class_LineNumber">115:	|</span>		--Returns--: Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 116" class="Class_LineNumber">116:	|</span>		--Parameters--:
-<span title="Script line: 117" class="Class_LineNumber">117:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 118" class="Class_LineNumber">118:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D location to which <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance should be placed
-<span title="Script line: 119" class="Class_LineNumber">119:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance
-<span title="Script line: 120" class="Class_LineNumber">120:	|</span>				Primitive<span class="Class_Number">3</span>DShape,PAR_Shape_E,<span class="Class_Number">3</span>D Shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> the <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance
-<span title="Script line: 121" class="Class_LineNumber">121:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 122" class="Class_LineNumber">122:	|</span>		&ltS>:
-<span title="Script line: 123" class="Class_LineNumber">123:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> New<span class="Class_BracketsLVL0">(</span>PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span> -> Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 124" class="Class_LineNumber">124:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 125" class="Class_LineNumber">125:	|</span>			Primitive<span class="Class_Number">3</span>D <span class="Class_BracketsLVL2">{</span> Position: PAR_Pos_Vec<span class="Class_Number">3</span>, Size: PAR_Size_Vec<span class="Class_Number">3</span>, Shape: PAR_Shape_E <span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 126" class="Class_LineNumber">126:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 127" class="Class_LineNumber">127:	|</span>	</pre></code>
+<span title="Script line: 107" class="Class_LineNumber">107:	|</span>	</pre></code>
+<hr>
+<h2 id="Primitive3D_implementation">Primitive3D implementation</h2>
+<pre><code><span title="Script line: 113" class="Class_LineNumber">113:	|</span>	impl Primitive<span class="Class_Number">3</span>D</pre></code>
+<blockquote><h2 id="New_">New</h2>
+<b>Description</b>: Creates a new instance of <code>Primitive3D</code>
+<b>Returns</b>: Primitive3D
+<b>Parameters</b>:
+<tr><table><th style="text-align: right;">	DataType</th><th>Name</th><th>Usage</th></tr>
+<tr><td style="text-align: right;">Vector3</td><td>PAR_Pos_Vec3</td><td>3D location to which new instance should be placed</td></tr>
+<tr><td style="text-align: right;">Vector3</td><td>PAR_Size_Vec3</td><td>3D size of new instance</td></tr>
+<tr><td style="text-align: right;">Primitive3DShape</td><td>PAR_Shape_E</td><td>3D Shape of the new instance</td></tr>
+</table></blockquote>
+<pre><code>
+<span title="Script line: 125" class="Class_LineNumber">125:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> New<span class="Class_BracketsLVL0">(</span>PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span> -> Primitive<span class="Class_Number">3</span>D
+<span title="Script line: 126" class="Class_LineNumber">126:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 127" class="Class_LineNumber">127:	|</span>			Primitive<span class="Class_Number">3</span>D <span class="Class_BracketsLVL1">{</span> Position: PAR_Pos_Vec<span class="Class_Number">3</span>, Size: PAR_Size_Vec<span class="Class_Number">3</span>, Shape: PAR_Shape_E <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 128" class="Class_LineNumber">128:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	</pre></code>
 <hr>
 <blockquote><h2 id="ReLocate">ReLocate</h2>
 <b>Description</b>: Moves this instance to new 3D absolute position
@@ -104,11 +103,11 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <tr><td style="text-align: right;">Vector3</td><td>PAR_Pos_Vec3</td><td>3D location to which this instance should be placed</td></tr>
 </table></blockquote>
 <pre><code>
-<span title="Script line: 138" class="Class_LineNumber">138:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReLocate<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 139" class="Class_LineNumber">139:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 140" class="Class_LineNumber">140:	|</span>			self.Position	= PAR_Pos_Vec<span class="Class_Number">3</span>;
-<span title="Script line: 141" class="Class_LineNumber">141:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 142" class="Class_LineNumber">142:	|</span>	</pre></code>
+<span title="Script line: 140" class="Class_LineNumber">140:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReLocate<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 141" class="Class_LineNumber">141:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 142" class="Class_LineNumber">142:	|</span>			self.Position	= PAR_Pos_Vec<span class="Class_Number">3</span>;
+<span title="Script line: 143" class="Class_LineNumber">143:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 144" class="Class_LineNumber">144:	|</span>	</pre></code>
 <hr>
 <blockquote><h2 id="ReSize">ReSize</h2>
 <b>Description</b>: Resizes this instance to new 3D absolute position
@@ -118,11 +117,11 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <tr><td style="text-align: right;">Vector3</td><td>PAR_Size_Vec3</td><td>3D Vector setting new size of this instance</td></tr>
 </table></blockquote>
 <pre><code>
-<span title="Script line: 153" class="Class_LineNumber">153:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReSize<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 154" class="Class_LineNumber">154:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 155" class="Class_LineNumber">155:	|</span>			self.Size	= PAR_Size_Vec<span class="Class_Number">3</span>;
-<span title="Script line: 156" class="Class_LineNumber">156:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 157" class="Class_LineNumber">157:	|</span>	</pre></code>
+<span title="Script line: 155" class="Class_LineNumber">155:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReSize<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 156" class="Class_LineNumber">156:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 157" class="Class_LineNumber">157:	|</span>			self.Size	= PAR_Size_Vec<span class="Class_Number">3</span>;
+<span title="Script line: 158" class="Class_LineNumber">158:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 159" class="Class_LineNumber">159:	|</span>	</pre></code>
 <hr>
 <blockquote><h2 id="ReShape">ReShape</h2>
 <b>Description</b>: Changes shape of this instance
@@ -132,11 +131,11 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <tr><td style="text-align: right;">Primitive3DShape</td><td>PAR_Shape_E</td><td>New shape for this instance</td></tr>
 </table></blockquote>
 <pre><code>
-<span title="Script line: 168" class="Class_LineNumber">168:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReShape<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 169" class="Class_LineNumber">169:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 170" class="Class_LineNumber">170:	|</span>			self.Shape	= PAR_Shape_E;
-<span title="Script line: 171" class="Class_LineNumber">171:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 172" class="Class_LineNumber">172:	|</span>	</pre></code>
+<span title="Script line: 170" class="Class_LineNumber">170:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReShape<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 171" class="Class_LineNumber">171:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 172" class="Class_LineNumber">172:	|</span>			self.Shape	= PAR_Shape_E;
+<span title="Script line: 173" class="Class_LineNumber">173:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 174" class="Class_LineNumber">174:	|</span>	</pre></code>
 <hr>
 <blockquote><h2 id="Move">Move</h2>
 <b>Description</b>: Moves this instance by 3D Vector <code>PAR_Pos_Vec3</code> relatively to the current position of this instance
@@ -146,13 +145,13 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <tr><td style="text-align: right;">Vector3</td><td>PAR_Pos_Vec3</td><td>3D Vector by which should this instance be moved</td></tr>
 </table></blockquote>
 <pre><code>
-<span title="Script line: 184" class="Class_LineNumber">184:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Move<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 185" class="Class_LineNumber">185:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 186" class="Class_LineNumber">186:	|</span>			self.Position.X	= self.Position.X+PAR_Pos_Vec<span class="Class_Number">3</span>.X;
-<span title="Script line: 187" class="Class_LineNumber">187:	|</span>			self.Position.Y	= self.Position.Y+PAR_Pos_Vec<span class="Class_Number">3</span>.Y;
-<span title="Script line: 188" class="Class_LineNumber">188:	|</span>			self.Position.Z	= self.Position.Z+PAR_Pos_Vec<span class="Class_Number">3</span>.Z;
-<span title="Script line: 189" class="Class_LineNumber">189:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 190" class="Class_LineNumber">190:	|</span>	</pre></code>
+<span title="Script line: 186" class="Class_LineNumber">186:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Move<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 187" class="Class_LineNumber">187:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 188" class="Class_LineNumber">188:	|</span>			self.Position.X	= self.Position.X+PAR_Pos_Vec<span class="Class_Number">3</span>.X;
+<span title="Script line: 189" class="Class_LineNumber">189:	|</span>			self.Position.Y	= self.Position.Y+PAR_Pos_Vec<span class="Class_Number">3</span>.Y;
+<span title="Script line: 190" class="Class_LineNumber">190:	|</span>			self.Position.Z	= self.Position.Z+PAR_Pos_Vec<span class="Class_Number">3</span>.Z;
+<span title="Script line: 191" class="Class_LineNumber">191:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 192" class="Class_LineNumber">192:	|</span>	</pre></code>
 <hr>
 <blockquote><h2 id="Grow">Grow</h2>
 <b>Description</b>: <i>Grows</i> this 3D instance by increasing size of this instance by provided 3D Vector <code>PAR_Pos_Vec3</code>
@@ -162,13 +161,13 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <tr><td style="text-align: right;">Vector3</td><td>PAR_Size_Vec3</td><td>3D Vector increasing size of this instance</td></tr>
 </table></blockquote>
 <pre><code>
-<span title="Script line: 202" class="Class_LineNumber">202:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Grow<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 203" class="Class_LineNumber">203:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 204" class="Class_LineNumber">204:	|</span>			self.Size.X	= self.Size.X+PAR_Size_Vec<span class="Class_Number">3</span>.X;
-<span title="Script line: 205" class="Class_LineNumber">205:	|</span>			self.Size.Y	= self.Size.Y+PAR_Size_Vec<span class="Class_Number">3</span>.Y;
-<span title="Script line: 206" class="Class_LineNumber">206:	|</span>			self.Size.Z	= self.Size.Z+PAR_Size_Vec<span class="Class_Number">3</span>.Z;
-<span title="Script line: 207" class="Class_LineNumber">207:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 208" class="Class_LineNumber">208:	|</span>	</pre></code>
+<span title="Script line: 204" class="Class_LineNumber">204:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Grow<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 205" class="Class_LineNumber">205:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 206" class="Class_LineNumber">206:	|</span>			self.Size.X	= self.Size.X+PAR_Size_Vec<span class="Class_Number">3</span>.X;
+<span title="Script line: 207" class="Class_LineNumber">207:	|</span>			self.Size.Y	= self.Size.Y+PAR_Size_Vec<span class="Class_Number">3</span>.Y;
+<span title="Script line: 208" class="Class_LineNumber">208:	|</span>			self.Size.Z	= self.Size.Z+PAR_Size_Vec<span class="Class_Number">3</span>.Z;
+<span title="Script line: 209" class="Class_LineNumber">209:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 210" class="Class_LineNumber">210:	|</span>	</pre></code>
 <hr>
 <hr>
 <hr>
@@ -212,51 +211,51 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <span title="Script line: 35" class="Class_LineNumber">35:		|</span>	<span class="Class_CommentTagWord">// SET: ENUMs / STRUCs</span>
 <span title="Script line: 36" class="Class_LineNumber">36:		|</span>	
 <span title="Script line: 37" class="Class_LineNumber">37:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_DataTypeWord"><span class="Class_DataTypeWord">enum</span></span> Primitive<span class="Class_Number">2</span>DShape
-<span title="Script line: 38" class="Class_LineNumber">38:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 38" class="Class_LineNumber">38:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 39" class="Class_LineNumber">39:		|</span>		Rectangle,
 <span title="Script line: 40" class="Class_LineNumber">40:		|</span>		Circle
-<span title="Script line: 41" class="Class_LineNumber">41:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 41" class="Class_LineNumber">41:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 42" class="Class_LineNumber">42:		|</span>	
 <span title="Script line: 43" class="Class_LineNumber">43:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_DataTypeWord"><span class="Class_DataTypeWord">enum</span></span> Primitive<span class="Class_Number">3</span>DShape
-<span title="Script line: 44" class="Class_LineNumber">44:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 44" class="Class_LineNumber">44:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 45" class="Class_LineNumber">45:		|</span>		Cube,
 <span title="Script line: 46" class="Class_LineNumber">46:		|</span>		Ball,
 <span title="Script line: 47" class="Class_LineNumber">47:		|</span>		Cilinder
-<span title="Script line: 48" class="Class_LineNumber">48:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 48" class="Class_LineNumber">48:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 49" class="Class_LineNumber">49:		|</span>	
 <span title="Script line: 50" class="Class_LineNumber">50:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> Vector<span class="Class_Number">2</span>
-<span title="Script line: 51" class="Class_LineNumber">51:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 51" class="Class_LineNumber">51:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 52" class="Class_LineNumber">52:		|</span>		X: isize,
 <span title="Script line: 53" class="Class_LineNumber">53:		|</span>		Y: isize
-<span title="Script line: 54" class="Class_LineNumber">54:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 54" class="Class_LineNumber">54:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 55" class="Class_LineNumber">55:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> Vector<span class="Class_Number">3</span>
-<span title="Script line: 56" class="Class_LineNumber">56:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 56" class="Class_LineNumber">56:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 57" class="Class_LineNumber">57:		|</span>		X: isize,
 <span title="Script line: 58" class="Class_LineNumber">58:		|</span>		Y: isize,
 <span title="Script line: 59" class="Class_LineNumber">59:		|</span>		Z: isize
-<span title="Script line: 60" class="Class_LineNumber">60:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 60" class="Class_LineNumber">60:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 61" class="Class_LineNumber">61:		|</span>	
 <span title="Script line: 62" class="Class_LineNumber">62:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> Po<span class="Class_DataTypeWord">int</span><span class="Class_Number">2</span>D
-<span title="Script line: 63" class="Class_LineNumber">63:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 63" class="Class_LineNumber">63:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 64" class="Class_LineNumber">64:		|</span>		Position: Vector<span class="Class_Number">2</span>
-<span title="Script line: 65" class="Class_LineNumber">65:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 65" class="Class_LineNumber">65:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 66" class="Class_LineNumber">66:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> Po<span class="Class_DataTypeWord">int</span><span class="Class_Number">3</span>D
-<span title="Script line: 67" class="Class_LineNumber">67:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 67" class="Class_LineNumber">67:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 68" class="Class_LineNumber">68:		|</span>		Position: Vector<span class="Class_Number">3</span>
-<span title="Script line: 69" class="Class_LineNumber">69:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 69" class="Class_LineNumber">69:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 70" class="Class_LineNumber">70:		|</span>	
 <span title="Script line: 71" class="Class_LineNumber">71:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> Primitive<span class="Class_Number">2</span>D
-<span title="Script line: 72" class="Class_LineNumber">72:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 72" class="Class_LineNumber">72:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 73" class="Class_LineNumber">73:		|</span>		Position: Vector<span class="Class_Number">2</span>,
 <span title="Script line: 74" class="Class_LineNumber">74:		|</span>		Size: Vector<span class="Class_Number">2</span>,
 <span title="Script line: 75" class="Class_LineNumber">75:		|</span>		Shape: Primitive<span class="Class_Number">2</span>DShape
-<span title="Script line: 76" class="Class_LineNumber">76:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 76" class="Class_LineNumber">76:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 77" class="Class_LineNumber">77:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 78" class="Class_LineNumber">78:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 78" class="Class_LineNumber">78:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 79" class="Class_LineNumber">79:		|</span>		Position: Vector<span class="Class_Number">3</span>,
 <span title="Script line: 80" class="Class_LineNumber">80:		|</span>		Size: Vector<span class="Class_Number">3</span>,
 <span title="Script line: 81" class="Class_LineNumber">81:		|</span>		Shape: Primitive<span class="Class_Number">3</span>DShape
-<span title="Script line: 82" class="Class_LineNumber">82:		|</span>	<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 82" class="Class_LineNumber">82:		|</span>	<span class="Class_BracketsLVL0">}</span>
 <span title="Script line: 83" class="Class_LineNumber">83:		|</span>	
 <span title="Script line: 84" class="Class_LineNumber">84:		|</span>	<span class="Class_CommentTagWord">// ENUMs / STRUCs !REM</span>
 <span title="Script line: 85" class="Class_LineNumber">85:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
@@ -266,7 +265,7 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <span title="Script line: 89" class="Class_LineNumber">89:		|</span>	<span class="Class_CommentTagWord">//PRT: Vector3 implementation</span>
 <span title="Script line: 90" class="Class_LineNumber">90:		|</span>	<span class="Class_CommentTagWord">//&ltLM></span>
 <span title="Script line: 91" class="Class_LineNumber">91:		|</span>	impl Vector<span class="Class_Number">3</span>
-<span title="Script line: 92" class="Class_LineNumber">92:		|</span>	<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 92" class="Class_LineNumber">92:		|</span>	<span class="Class_BracketsLVL0">{</span>
 <span title="Script line: 93" class="Class_LineNumber">93:		|</span>		/*&ltF>:CAT:New
 <span title="Script line: 94" class="Class_LineNumber">94:		|</span>		--Description--: Creates a <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_BracketsLVL0">[</span>'Vector<span class="Class_Number">3</span>'<span class="Class_BracketsLVL0">]</span>
 <span title="Script line: 95" class="Class_LineNumber">95:		|</span>		--Returns--: Vector<span class="Class_Number">3</span>
@@ -278,130 +277,132 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <span title="Script line: 101" class="Class_LineNumber">101:	|</span>		:&ltT>:&ltF>
 <span title="Script line: 102" class="Class_LineNumber">102:	|</span>		&ltS>:*/
 <span title="Script line: 103" class="Class_LineNumber">103:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> New<span class="Class_BracketsLVL0">(</span>PAR_X_Isize: isize, PAR_Y_Isize: isize, PAR_Z_Isize: isize<span class="Class_BracketsLVL0">)</span> -> Vector<span class="Class_Number">3</span>
-<span title="Script line: 104" class="Class_LineNumber">104:	|</span>		<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 105" class="Class_LineNumber">105:	|</span>			Vector<span class="Class_Number">3</span> <span class="Class_BracketsLVL3">{</span> X: PAR_X_Isize, Y: PAR_Y_Isize, Z: PAR_Z_Isize <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 104" class="Class_LineNumber">104:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 105" class="Class_LineNumber">105:	|</span>			Vector<span class="Class_Number">3</span> <span class="Class_BracketsLVL2">{</span> X: PAR_X_Isize, Y: PAR_Y_Isize, Z: PAR_Z_Isize <span class="Class_BracketsLVL2">}</span>
 <span title="Script line: 106" class="Class_LineNumber">106:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 107" class="Class_LineNumber">107:	|</span>	<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 108" class="Class_LineNumber">108:	|</span>	
-<span title="Script line: 109" class="Class_LineNumber">109:	|</span>	<span class="Class_CommentTagWord">//PRT: Primitive3D implementation</span>
-<span title="Script line: 110" class="Class_LineNumber">110:	|</span>	<span class="Class_CommentTagWord">//&ltLM></span>
-<span title="Script line: 111" class="Class_LineNumber">111:	|</span>	impl Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 113" class="Class_LineNumber">113:	|</span>		/*&ltF>:CAT:New
-<span title="Script line: 114" class="Class_LineNumber">114:	|</span>		--Description--: Creates a <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_BracketsLVL0">[</span>'Primitive<span class="Class_Number">3</span>D'<span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 115" class="Class_LineNumber">115:	|</span>		--Returns--: Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 116" class="Class_LineNumber">116:	|</span>		--Parameters--:
-<span title="Script line: 117" class="Class_LineNumber">117:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 118" class="Class_LineNumber">118:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D location to which <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance should be placed
-<span title="Script line: 119" class="Class_LineNumber">119:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance
-<span title="Script line: 120" class="Class_LineNumber">120:	|</span>				Primitive<span class="Class_Number">3</span>DShape,PAR_Shape_E,<span class="Class_Number">3</span>D Shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> the <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance
-<span title="Script line: 121" class="Class_LineNumber">121:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 122" class="Class_LineNumber">122:	|</span>		&ltS>:*/
-<span title="Script line: 123" class="Class_LineNumber">123:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> New<span class="Class_BracketsLVL0">(</span>PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span> -> Primitive<span class="Class_Number">3</span>D
-<span title="Script line: 124" class="Class_LineNumber">124:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 125" class="Class_LineNumber">125:	|</span>			Primitive<span class="Class_Number">3</span>D <span class="Class_BracketsLVL2">{</span> Position: PAR_Pos_Vec<span class="Class_Number">3</span>, Size: PAR_Size_Vec<span class="Class_Number">3</span>, Shape: PAR_Shape_E <span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 126" class="Class_LineNumber">126:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 127" class="Class_LineNumber">127:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 128" class="Class_LineNumber">128:	|</span>	<span class="Class_CommentTagWord">	//---</span>
-<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	
-<span title="Script line: 130" class="Class_LineNumber">130:	|</span>		/*&ltF>:CAT:ReLocate
-<span title="Script line: 131" class="Class_LineNumber">131:	|</span>		--Description--: Moves this instance to <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> <span class="Class_Number">3</span>D absolute position
-<span title="Script line: 132" class="Class_LineNumber">132:	|</span>		--Returns--:nil
-<span title="Script line: 133" class="Class_LineNumber">133:	|</span>		--Parameters--:
-<span title="Script line: 134" class="Class_LineNumber">134:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 135" class="Class_LineNumber">135:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D location to which this instance should be placed
-<span title="Script line: 136" class="Class_LineNumber">136:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 137" class="Class_LineNumber">137:	|</span>		&ltS>:*/
-<span title="Script line: 138" class="Class_LineNumber">138:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReLocate<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 139" class="Class_LineNumber">139:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 140" class="Class_LineNumber">140:	|</span>			self.Position	= PAR_Pos_Vec<span class="Class_Number">3</span>;
-<span title="Script line: 141" class="Class_LineNumber">141:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 142" class="Class_LineNumber">142:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 143" class="Class_LineNumber">143:	|</span>	<span class="Class_CommentTagWord">	//---</span>
-<span title="Script line: 144" class="Class_LineNumber">144:	|</span>	
-<span title="Script line: 145" class="Class_LineNumber">145:	|</span>		/*&ltF>:CAT:ReSize
-<span title="Script line: 146" class="Class_LineNumber">146:	|</span>		--Description--: Resizes this instance to <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> <span class="Class_Number">3</span>D absolute position
-<span title="Script line: 147" class="Class_LineNumber">147:	|</span>		--Returns--:nil
-<span title="Script line: 148" class="Class_LineNumber">148:	|</span>		--Parameters--:
-<span title="Script line: 149" class="Class_LineNumber">149:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 150" class="Class_LineNumber">150:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D Vector setting <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
-<span title="Script line: 151" class="Class_LineNumber">151:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 152" class="Class_LineNumber">152:	|</span>		&ltS>:*/
-<span title="Script line: 153" class="Class_LineNumber">153:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReSize<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 154" class="Class_LineNumber">154:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 155" class="Class_LineNumber">155:	|</span>			self.Size	= PAR_Size_Vec<span class="Class_Number">3</span>;
-<span title="Script line: 156" class="Class_LineNumber">156:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 157" class="Class_LineNumber">157:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 158" class="Class_LineNumber">158:	|</span>	<span class="Class_CommentTagWord">	//---</span>
-<span title="Script line: 159" class="Class_LineNumber">159:	|</span>	
-<span title="Script line: 160" class="Class_LineNumber">160:	|</span>		/*&ltF>:CAT:ReShape
-<span title="Script line: 161" class="Class_LineNumber">161:	|</span>		--Description--: Changes shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
-<span title="Script line: 162" class="Class_LineNumber">162:	|</span>		--Returns--:nil
-<span title="Script line: 163" class="Class_LineNumber">163:	|</span>		--Parameters--:
-<span title="Script line: 164" class="Class_LineNumber">164:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 165" class="Class_LineNumber">165:	|</span>				Primitive<span class="Class_Number">3</span>DShape,PAR_Shape_E,New shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> this instance
-<span title="Script line: 166" class="Class_LineNumber">166:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 167" class="Class_LineNumber">167:	|</span>		&ltS>:*/
-<span title="Script line: 168" class="Class_LineNumber">168:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReShape<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 169" class="Class_LineNumber">169:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 170" class="Class_LineNumber">170:	|</span>			self.Shape	= PAR_Shape_E;
-<span title="Script line: 171" class="Class_LineNumber">171:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 172" class="Class_LineNumber">172:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 173" class="Class_LineNumber">173:	|</span>	<span class="Class_CommentTagWord">	//---</span>
-<span title="Script line: 174" class="Class_LineNumber">174:	|</span>	
-<span title="Script line: 175" class="Class_LineNumber">175:	|</span>	
-<span title="Script line: 176" class="Class_LineNumber">176:	|</span>		/*&ltF>:CAT:Move
-<span title="Script line: 177" class="Class_LineNumber">177:	|</span>		--Description--: Moves this instance by <span class="Class_Number">3</span>D Vector <span class="Class_BracketsLVL0">[</span>'PAR_Pos_Vec<span class="Class_Number">3</span>'<span class="Class_BracketsLVL0">]</span> relatively to the current position <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
-<span title="Script line: 178" class="Class_LineNumber">178:	|</span>		--Returns--:nil
-<span title="Script line: 179" class="Class_LineNumber">179:	|</span>		--Parameters--:
-<span title="Script line: 180" class="Class_LineNumber">180:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 181" class="Class_LineNumber">181:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D Vector by which should this instance be moved
-<span title="Script line: 182" class="Class_LineNumber">182:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 183" class="Class_LineNumber">183:	|</span>		&ltS>:*/
-<span title="Script line: 184" class="Class_LineNumber">184:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Move<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 185" class="Class_LineNumber">185:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 186" class="Class_LineNumber">186:	|</span>			self.Position.X	= self.Position.X+PAR_Pos_Vec<span class="Class_Number">3</span>.X;
-<span title="Script line: 187" class="Class_LineNumber">187:	|</span>			self.Position.Y	= self.Position.Y+PAR_Pos_Vec<span class="Class_Number">3</span>.Y;
-<span title="Script line: 188" class="Class_LineNumber">188:	|</span>			self.Position.Z	= self.Position.Z+PAR_Pos_Vec<span class="Class_Number">3</span>.Z;
-<span title="Script line: 189" class="Class_LineNumber">189:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 190" class="Class_LineNumber">190:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 191" class="Class_LineNumber">191:	|</span>	<span class="Class_CommentTagWord">	//---</span>
-<span title="Script line: 192" class="Class_LineNumber">192:	|</span>	
-<span title="Script line: 193" class="Class_LineNumber">193:	|</span>	
-<span title="Script line: 194" class="Class_LineNumber">194:	|</span>		/*&ltF>:CAT:Grow
-<span title="Script line: 195" class="Class_LineNumber">195:	|</span>		--Description--: ``Grows`` this <span class="Class_Number">3</span>D instance by increasing size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance by provided <span class="Class_Number">3</span>D Vector <span class="Class_BracketsLVL0">[</span>'PAR_Pos_Vec<span class="Class_Number">3</span>'<span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 196" class="Class_LineNumber">196:	|</span>		--Returns--:nil
-<span title="Script line: 197" class="Class_LineNumber">197:	|</span>		--Parameters--:
-<span title="Script line: 198" class="Class_LineNumber">198:	|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 199" class="Class_LineNumber">199:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D Vector increasing size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
-<span title="Script line: 200" class="Class_LineNumber">200:	|</span>		:&ltT>:&ltF>
-<span title="Script line: 201" class="Class_LineNumber">201:	|</span>		&ltS>:*/
-<span title="Script line: 202" class="Class_LineNumber">202:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Grow<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 203" class="Class_LineNumber">203:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 204" class="Class_LineNumber">204:	|</span>			self.Size.X	= self.Size.X+PAR_Size_Vec<span class="Class_Number">3</span>.X;
-<span title="Script line: 205" class="Class_LineNumber">205:	|</span>			self.Size.Y	= self.Size.Y+PAR_Size_Vec<span class="Class_Number">3</span>.Y;
-<span title="Script line: 206" class="Class_LineNumber">206:	|</span>			self.Size.Z	= self.Size.Z+PAR_Size_Vec<span class="Class_Number">3</span>.Z;
-<span title="Script line: 207" class="Class_LineNumber">207:	|</span>		<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 208" class="Class_LineNumber">208:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 209" class="Class_LineNumber">209:	|</span>	<span class="Class_CommentTagWord">	//---</span>
-<span title="Script line: 210" class="Class_LineNumber">210:	|</span>	<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 211" class="Class_LineNumber">211:	|</span>	<span class="Class_CommentTagWord">//---</span>
-<span title="Script line: 212" class="Class_LineNumber">212:	|</span>	
-<span title="Script line: 213" class="Class_LineNumber">213:	|</span>	
-<span title="Script line: 214" class="Class_LineNumber">214:	|</span>	<span class="Class_CommentTagWord">// Implementations !REM</span>
-<span title="Script line: 215" class="Class_LineNumber">215:	|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 216" class="Class_LineNumber">216:	|</span>	<span class="Class_CommentTagWord">// SET: AUTORUN Functions</span>
-<span title="Script line: 217" class="Class_LineNumber">217:	|</span>	
-<span title="Script line: 218" class="Class_LineNumber">218:	|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ma<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 219" class="Class_LineNumber">219:	|</span>	<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 220" class="Class_LineNumber">220:	|</span>	
-<span title="Script line: 221" class="Class_LineNumber">221:	|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 107" class="Class_LineNumber">107:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 108" class="Class_LineNumber">108:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 109" class="Class_LineNumber">109:	|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 110" class="Class_LineNumber">110:	|</span>	
+<span title="Script line: 111" class="Class_LineNumber">111:	|</span>	<span class="Class_CommentTagWord">//PRT: Primitive3D implementation</span>
+<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	<span class="Class_CommentTagWord">//&ltLM></span>
+<span title="Script line: 113" class="Class_LineNumber">113:	|</span>	impl Primitive<span class="Class_Number">3</span>D
+<span title="Script line: 114" class="Class_LineNumber">114:	|</span>	<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 115" class="Class_LineNumber">115:	|</span>		/*&ltF>:CAT:New
+<span title="Script line: 116" class="Class_LineNumber">116:	|</span>		--Description--: Creates a <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_BracketsLVL0">[</span>'Primitive<span class="Class_Number">3</span>D'<span class="Class_BracketsLVL0">]</span>
+<span title="Script line: 117" class="Class_LineNumber">117:	|</span>		--Returns--: Primitive<span class="Class_Number">3</span>D
+<span title="Script line: 118" class="Class_LineNumber">118:	|</span>		--Parameters--:
+<span title="Script line: 119" class="Class_LineNumber">119:	|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 120" class="Class_LineNumber">120:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D location to which <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance should be placed
+<span title="Script line: 121" class="Class_LineNumber">121:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance
+<span title="Script line: 122" class="Class_LineNumber">122:	|</span>				Primitive<span class="Class_Number">3</span>DShape,PAR_Shape_E,<span class="Class_Number">3</span>D Shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> the <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> instance
+<span title="Script line: 123" class="Class_LineNumber">123:	|</span>		:&ltT>:&ltF>
+<span title="Script line: 124" class="Class_LineNumber">124:	|</span>		&ltS>:*/
+<span title="Script line: 125" class="Class_LineNumber">125:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> New<span class="Class_BracketsLVL0">(</span>PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span>, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span> -> Primitive<span class="Class_Number">3</span>D
+<span title="Script line: 126" class="Class_LineNumber">126:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 127" class="Class_LineNumber">127:	|</span>			Primitive<span class="Class_Number">3</span>D <span class="Class_BracketsLVL2">{</span> Position: PAR_Pos_Vec<span class="Class_Number">3</span>, Size: PAR_Size_Vec<span class="Class_Number">3</span>, Shape: PAR_Shape_E <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 128" class="Class_LineNumber">128:	|</span>		<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 130" class="Class_LineNumber">130:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 131" class="Class_LineNumber">131:	|</span>	
+<span title="Script line: 132" class="Class_LineNumber">132:	|</span>		/*&ltF>:CAT:ReLocate
+<span title="Script line: 133" class="Class_LineNumber">133:	|</span>		--Description--: Moves this instance to <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> <span class="Class_Number">3</span>D absolute position
+<span title="Script line: 134" class="Class_LineNumber">134:	|</span>		--Returns--:nil
+<span title="Script line: 135" class="Class_LineNumber">135:	|</span>		--Parameters--:
+<span title="Script line: 136" class="Class_LineNumber">136:	|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 137" class="Class_LineNumber">137:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D location to which this instance should be placed
+<span title="Script line: 138" class="Class_LineNumber">138:	|</span>		:&ltT>:&ltF>
+<span title="Script line: 139" class="Class_LineNumber">139:	|</span>		&ltS>:*/
+<span title="Script line: 140" class="Class_LineNumber">140:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReLocate<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 141" class="Class_LineNumber">141:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 142" class="Class_LineNumber">142:	|</span>			self.Position	= PAR_Pos_Vec<span class="Class_Number">3</span>;
+<span title="Script line: 143" class="Class_LineNumber">143:	|</span>		<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 144" class="Class_LineNumber">144:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 145" class="Class_LineNumber">145:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 146" class="Class_LineNumber">146:	|</span>	
+<span title="Script line: 147" class="Class_LineNumber">147:	|</span>		/*&ltF>:CAT:ReSize
+<span title="Script line: 148" class="Class_LineNumber">148:	|</span>		--Description--: Resizes this instance to <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> <span class="Class_Number">3</span>D absolute position
+<span title="Script line: 149" class="Class_LineNumber">149:	|</span>		--Returns--:nil
+<span title="Script line: 150" class="Class_LineNumber">150:	|</span>		--Parameters--:
+<span title="Script line: 151" class="Class_LineNumber">151:	|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 152" class="Class_LineNumber">152:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D Vector setting <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">new</span></span> size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
+<span title="Script line: 153" class="Class_LineNumber">153:	|</span>		:&ltT>:&ltF>
+<span title="Script line: 154" class="Class_LineNumber">154:	|</span>		&ltS>:*/
+<span title="Script line: 155" class="Class_LineNumber">155:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReSize<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 156" class="Class_LineNumber">156:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 157" class="Class_LineNumber">157:	|</span>			self.Size	= PAR_Size_Vec<span class="Class_Number">3</span>;
+<span title="Script line: 158" class="Class_LineNumber">158:	|</span>		<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 159" class="Class_LineNumber">159:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 160" class="Class_LineNumber">160:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 161" class="Class_LineNumber">161:	|</span>	
+<span title="Script line: 162" class="Class_LineNumber">162:	|</span>		/*&ltF>:CAT:ReShape
+<span title="Script line: 163" class="Class_LineNumber">163:	|</span>		--Description--: Changes shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
+<span title="Script line: 164" class="Class_LineNumber">164:	|</span>		--Returns--:nil
+<span title="Script line: 165" class="Class_LineNumber">165:	|</span>		--Parameters--:
+<span title="Script line: 166" class="Class_LineNumber">166:	|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 167" class="Class_LineNumber">167:	|</span>				Primitive<span class="Class_Number">3</span>DShape,PAR_Shape_E,New shape <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> this instance
+<span title="Script line: 168" class="Class_LineNumber">168:	|</span>		:&ltT>:&ltF>
+<span title="Script line: 169" class="Class_LineNumber">169:	|</span>		&ltS>:*/
+<span title="Script line: 170" class="Class_LineNumber">170:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ReShape<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Shape_E: Primitive<span class="Class_Number">3</span>DShape<span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 171" class="Class_LineNumber">171:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 172" class="Class_LineNumber">172:	|</span>			self.Shape	= PAR_Shape_E;
+<span title="Script line: 173" class="Class_LineNumber">173:	|</span>		<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 174" class="Class_LineNumber">174:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 175" class="Class_LineNumber">175:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 176" class="Class_LineNumber">176:	|</span>	
+<span title="Script line: 177" class="Class_LineNumber">177:	|</span>	
+<span title="Script line: 178" class="Class_LineNumber">178:	|</span>		/*&ltF>:CAT:Move
+<span title="Script line: 179" class="Class_LineNumber">179:	|</span>		--Description--: Moves this instance by <span class="Class_Number">3</span>D Vector <span class="Class_BracketsLVL0">[</span>'PAR_Pos_Vec<span class="Class_Number">3</span>'<span class="Class_BracketsLVL0">]</span> relatively to the current position <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
+<span title="Script line: 180" class="Class_LineNumber">180:	|</span>		--Returns--:nil
+<span title="Script line: 181" class="Class_LineNumber">181:	|</span>		--Parameters--:
+<span title="Script line: 182" class="Class_LineNumber">182:	|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 183" class="Class_LineNumber">183:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Pos_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D Vector by which should this instance be moved
+<span title="Script line: 184" class="Class_LineNumber">184:	|</span>		:&ltT>:&ltF>
+<span title="Script line: 185" class="Class_LineNumber">185:	|</span>		&ltS>:*/
+<span title="Script line: 186" class="Class_LineNumber">186:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Move<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Pos_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 187" class="Class_LineNumber">187:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 188" class="Class_LineNumber">188:	|</span>			self.Position.X	= self.Position.X+PAR_Pos_Vec<span class="Class_Number">3</span>.X;
+<span title="Script line: 189" class="Class_LineNumber">189:	|</span>			self.Position.Y	= self.Position.Y+PAR_Pos_Vec<span class="Class_Number">3</span>.Y;
+<span title="Script line: 190" class="Class_LineNumber">190:	|</span>			self.Position.Z	= self.Position.Z+PAR_Pos_Vec<span class="Class_Number">3</span>.Z;
+<span title="Script line: 191" class="Class_LineNumber">191:	|</span>		<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 192" class="Class_LineNumber">192:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 193" class="Class_LineNumber">193:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 194" class="Class_LineNumber">194:	|</span>	
+<span title="Script line: 195" class="Class_LineNumber">195:	|</span>	
+<span title="Script line: 196" class="Class_LineNumber">196:	|</span>		/*&ltF>:CAT:Grow
+<span title="Script line: 197" class="Class_LineNumber">197:	|</span>		--Description--: ``Grows`` this <span class="Class_Number">3</span>D instance by increasing size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance by provided <span class="Class_Number">3</span>D Vector <span class="Class_BracketsLVL0">[</span>'PAR_Pos_Vec<span class="Class_Number">3</span>'<span class="Class_BracketsLVL0">]</span>
+<span title="Script line: 198" class="Class_LineNumber">198:	|</span>		--Returns--:nil
+<span title="Script line: 199" class="Class_LineNumber">199:	|</span>		--Parameters--:
+<span title="Script line: 200" class="Class_LineNumber">200:	|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 201" class="Class_LineNumber">201:	|</span>				Vector<span class="Class_Number">3</span>,PAR_Size_Vec<span class="Class_Number">3</span>,<span class="Class_Number">3</span>D Vector increasing size <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">of</span></span> this instance
+<span title="Script line: 202" class="Class_LineNumber">202:	|</span>		:&ltT>:&ltF>
+<span title="Script line: 203" class="Class_LineNumber">203:	|</span>		&ltS>:*/
+<span title="Script line: 204" class="Class_LineNumber">204:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Grow<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, PAR_Size_Vec<span class="Class_Number">3</span>: Vector<span class="Class_Number">3</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 205" class="Class_LineNumber">205:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 206" class="Class_LineNumber">206:	|</span>			self.Size.X	= self.Size.X+PAR_Size_Vec<span class="Class_Number">3</span>.X;
+<span title="Script line: 207" class="Class_LineNumber">207:	|</span>			self.Size.Y	= self.Size.Y+PAR_Size_Vec<span class="Class_Number">3</span>.Y;
+<span title="Script line: 208" class="Class_LineNumber">208:	|</span>			self.Size.Z	= self.Size.Z+PAR_Size_Vec<span class="Class_Number">3</span>.Z;
+<span title="Script line: 209" class="Class_LineNumber">209:	|</span>		<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 210" class="Class_LineNumber">210:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 211" class="Class_LineNumber">211:	|</span>	<span class="Class_CommentTagWord">	//---</span>
+<span title="Script line: 212" class="Class_LineNumber">212:	|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 213" class="Class_LineNumber">213:	|</span>	<span class="Class_CommentTagWord">//---</span>
+<span title="Script line: 214" class="Class_LineNumber">214:	|</span>	
+<span title="Script line: 215" class="Class_LineNumber">215:	|</span>	
+<span title="Script line: 216" class="Class_LineNumber">216:	|</span>	<span class="Class_CommentTagWord">// Implementations !REM</span>
+<span title="Script line: 217" class="Class_LineNumber">217:	|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
+<span title="Script line: 218" class="Class_LineNumber">218:	|</span>	<span class="Class_CommentTagWord">// SET: AUTORUN Functions</span>
+<span title="Script line: 219" class="Class_LineNumber">219:	|</span>	
+<span title="Script line: 220" class="Class_LineNumber">220:	|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ma<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 221" class="Class_LineNumber">221:	|</span>	<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 222" class="Class_LineNumber">222:	|</span>	
+<span title="Script line: 223" class="Class_LineNumber">223:	|</span>	<span class="Class_BracketsLVL0">}</span>
 </code></pre>
 <pre><code>
 Documented with IVN Documenter
-Documented at: 08.06.2025 19:29:35
+Documented at: 08.06.2025 19:41:16
 <hr>© IVN - Iterik Viscela Nova, © Matěj Zahradník, © IVN Documenter
 IVN Documenter - 0.01.13.U | 0.04.034.D
 !!DO NOT REMOVE THIS INFORMATION LINE!!
-</code></pre></div><div style="position: fixed;display: flex;flex-direction: column;gap: 0.5vh;top: 0;left: 0;height: 100%;width: 10%;background-color: #1B2A35;overflow-x: scroll;scrollbar-width: 0.5vh;scrollbar-color: #5607F5;"><a class="HeaderLVL1" title="Copliler messages" href="#Copliler_messages">Copliler messages</a><a class="HeaderLVL1" title="Package and Import statements" href="#Package_and_Import_statements">Package and Import statements</a><a class="HeaderLVL1" title="ENUMs / STRUCs" href="#ENUMs_/_STRUCs">ENUMs / STRUCs</a><a class="HeaderLVL1" title="Implementations" href="#Implementations">Implementations</a><a class="HeaderLVL3" title="Vector3 implementation" href="#Vector3_implementation">Vector3 implementation</a><a class="HeaderLVL2" title="New" href="#New">New</a><a class="HeaderLVL2" title="ReLocate" href="#ReLocate">ReLocate</a><a class="HeaderLVL2" title="ReSize" href="#ReSize">ReSize</a><a class="HeaderLVL2" title="ReShape" href="#ReShape">ReShape</a><a class="HeaderLVL2" title="Move" href="#Move">Move</a><a class="HeaderLVL2" title="Grow" href="#Grow">Grow</a><a class="HeaderLVL1" title="AUTORUN Functions" href="#AUTORUN_Functions">AUTORUN Functions</a></body>
+</code></pre></div><div style="position: fixed;display: flex;flex-direction: column;gap: 0.5vh;top: 0;left: 0;height: 100%;width: 10%;background-color: #1B2A35;overflow-x: scroll;scrollbar-width: 0.5vh;scrollbar-color: #5607F5;"><a class="HeaderLVL1" title="Copliler messages" href="#Copliler_messages">Copliler messages</a><a class="HeaderLVL1" title="Package and Import statements" href="#Package_and_Import_statements">Package and Import statements</a><a class="HeaderLVL1" title="ENUMs / STRUCs" href="#ENUMs_/_STRUCs">ENUMs / STRUCs</a><a class="HeaderLVL1" title="Implementations" href="#Implementations">Implementations</a><a class="HeaderLVL3" title="Vector3 implementation" href="#Vector3_implementation">Vector3 implementation</a><a class="HeaderLVL2" title="New" href="#New">New</a><a class="HeaderLVL3" title="Primitive3D implementation" href="#Primitive3D_implementation">Primitive3D implementation</a><a class="HeaderLVL2" title="New_" href="#New_">Ne</a><a class="HeaderLVL2" title="ReLocate" href="#ReLocate">ReLocate</a><a class="HeaderLVL2" title="ReSize" href="#ReSize">ReSize</a><a class="HeaderLVL2" title="ReShape" href="#ReShape">ReShape</a><a class="HeaderLVL2" title="Move" href="#Move">Move</a><a class="HeaderLVL2" title="Grow" href="#Grow">Grow</a><a class="HeaderLVL1" title="AUTORUN Functions" href="#AUTORUN_Functions">AUTORUN Functions</a></body>
 </html>
