@@ -1,0 +1,16 @@
+﻿SET: CLI Renamer System | General Help
+
+CAT: Commands
+
+<F>:<T>:Commands,Options,Takes in,Explanation
+-h,,--,Shows this message
+-h,Help file name,--,Shows message explaining each exit code
+-render,,--,Runs main.rs (Opens Rendered debuging window)
+:<T>:<F>
+
+CAT: Other help files
+
+<F>:<T>:File name,Contains
+ecodes,Elaborates on exit codes meaning
+ftypes,Elaborates on what file types means
+:<T>:<F>

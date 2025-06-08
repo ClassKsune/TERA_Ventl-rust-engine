@@ -8,8 +8,13 @@ if [ "$V_Str_Resp" = "y" ]; then
 	cargo build
 fi
 
-cp -r ./FLD_Resources ./target/debug/
-cp -r ./FLD_GuideFiles/ ./target/debug/
+echo -n "Re-Add resources? [y]"
+read V_Str_Resp2
+
+if [ "$V_Str_Resp2" = "y" ]; then
+	cp -r ./FLD_Resources ./target/debug/
+	cp -r ./FLD_GuideFiles/ ./target/debug/
+fi
 
 cargo build
 clear

@@ -83,7 +83,8 @@ impl ApplicationHandler for App {
     }
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+pub fn Renderer() -> Result<(), Box<dyn std::error::Error>> {
+
     println!("🚀 Starting winit debug application...");
     
     // Check arguments
@@ -125,4 +126,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     
     Ok(())
+}
+
+fn main()
+{
+	Renderer();
 }

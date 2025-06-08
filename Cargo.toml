@@ -1,8 +1,17 @@
 [package]
-name = "Engine"
-author = "Kryštof 'Artie' Novotný & X"
+name = "TERA_Ventl_Engine"
+authors = ["Matěj Zahradník [The_Universality]", "Kryštof 'Artie' Novotný"]
 version = "0.1.0"
 edition = "2024"
+default-run = "TERA_Ventl_System"
+
+[lib]
+path = "./src/TS_System.rs"
+
+[[bin]]
+path = "./src/TS_System.rs"
+name = "TERA_Ventl_System"
+
 
 [dependencies]
 ash = "0.38.0"
