@@ -86,7 +86,7 @@ pub struct Primitive3D
 // SET: Implementations
 
 
-//PRT: Vector3 implementation
+//SET: Vector3 implementation
 //<LM>
 impl Vector3
 {
@@ -108,7 +108,7 @@ impl Vector3
 	//---
 }
 
-//PRT: Primitive3D implementation
+//SET: Primitive3D implementation
 //<LM>
 impl Primitive3D
 {
