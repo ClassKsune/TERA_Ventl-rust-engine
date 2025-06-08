@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="https://resource.tsk-mng-access.org/FLD_Global/FLD_Image/ICON_Translater.png"><title>main.rs</title>
+<style>
+*{scroll-behavior: smooth !important;tab-size: 4;}
+body{white-space: pre;font-family: Sans-serif !important;}
+hr{height: 2px;border: none;color: black;background-color: black;}
+h2, h3{ margin-bottom: 0; padding-bottom: 0;}pre{overflow-x: scroll;padding: 0px 15px;border: solid 2px lightgray;border-radius: 5px;background-color: rgb(243, 234, 234);}::-webkit-scrollbar{width: 0.5vh;height: 0.75vh;}
+::-webkit-scrollbar-track{background-color: #1B2A35;}
+::-webkit-scrollbar-thumb{background-color: #5607F5;}
+::-webkit-scrollbar-button{display: none;}
+blockquote{margin: 5px;margin-left: 20px;padding-left: 15px;border-left-style: solid;border-left-width: 5px;border-left-color: #1B2A35;background-color	: rgb(243, 234, 234);}
+code{font-family: Consolas, 'Courier New';background-color: rgb(243, 234, 234);}
+table{width: 100%;border-collapse: collapse;}
+td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
+.Class_LogicKeyWord{color: #af00a6;}
+.Class_DataTypeWord{color: #d9020b;}
+.Class_CommentTagWord{color: #8d8c57d8;}
+.Class_String{color: #229b2b;}
+.Class_Number{color: #1E96FC;}
+.Class_BracketsLVL0, .Class_BracketsLVL1, .Class_BracketsLVL2, .Class_BracketsLVL3, .Class_Number{background-color: #3131310c;}
+.Class_BracketsLVL0{color: #229b2b;}
+.Class_BracketsLVL1{color: #2277ff;}
+.Class_BracketsLVL2{color: #d9020b;}
+.Class_BracketsLVL3{color: #f280d0;}
+.Class_LineNumber{padding: 0px 2px;color: #1E96FC;background-color: #1B2A35;}
+.HeaderLVL1,.HeaderLVL2,.HeaderLVL3{transition: 0.5s;color: white;height: 5%;text-align: center;text-decoration: none;border: solid 1px #0D0106;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;width: 90%;margin: 0 auto; min-height: 2.5%; max-height: 2.5%; padding-top: 1.5%;}
+.HeaderLVL1:hover,.HeaderLVL2:hover,.HeaderLVL3:hover{transition: 0.5s;border: solid 1px #1E96FC;}
+.HeaderLVL1{font-size: 1.6vh;font-weight: 900;}
+.HeaderLVL2{font-size: 1.6vh;font-weight: 700;}
+.HeaderLVL3{font-size: 1.5vh;font-weight: 500;}
+</style></head>
+<body>
+<div style="position: absolute;bottom: 0;right: 0;left: 11%;height: 95%;width: 89%;"><h1>main.rs<img src="https://resource.tsk-mng-access.org/FLD_Global/FLD_Image/ICON_Translater.png" title="IVN Documenter" style="width:40px;height:40px;"></h1>
+<hr>
+Force show the window
+Keep requesting redraws to maintain window
+Don't spam this one
+println!("about_to_wait called");
+Check arguments
+Commenting out the actual call for debugging
+TS_System::F_Main_RNil();
+<h1>Whole File - main.rs</h1>
+<hr><pre><code>
+<span title="Script line: 1" class="Class_LineNumber">1:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">use</span></span> winit::<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 2" class="Class_LineNumber">2:		|</span>	    application::ApplicationHandler,
+<span title="Script line: 3" class="Class_LineNumber">3:		|</span>	    event::WindowEvent,
+<span title="Script line: 4" class="Class_LineNumber">4:		|</span>	    event_loop::<span class="Class_BracketsLVL1">{</span>ActiveEventLoop, ControlFlow, EventLoop<span class="Class_BracketsLVL1">}</span>,
+<span title="Script line: 5" class="Class_LineNumber">5:		|</span>	    window::<span class="Class_BracketsLVL1">{</span>Window, WindowId<span class="Class_BracketsLVL1">}</span>,
+<span title="Script line: 6" class="Class_LineNumber">6:		|</span>	<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 7" class="Class_LineNumber">7:		|</span>	
+<span title="Script line: 8" class="Class_LineNumber">8:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">use</span></span> std::env;
+<span title="Script line: 9" class="Class_LineNumber">9:		|</span>	
+<span title="Script line: 10" class="Class_LineNumber">10:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">struct</span></span> App <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 11" class="Class_LineNumber">11:		|</span>	    window: Option&ltWindow>,
+<span title="Script line: 12" class="Class_LineNumber">12:		|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 13" class="Class_LineNumber">13:		|</span>	
+<span title="Script line: 14" class="Class_LineNumber">14:		|</span>	impl ApplicationHandler <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> App <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 15" class="Class_LineNumber">15:		|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> resumed<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, event_loop: &ActiveEventLoop<span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 16" class="Class_LineNumber">16:		|</span>	        println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ resumed<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span> called"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 17" class="Class_LineNumber">17:		|</span>	        
+<span title="Script line: 18" class="Class_LineNumber">18:		|</span>	        <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">if</span></span> self.window.is_some<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 19" class="Class_LineNumber">19:		|</span>	            println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Window already exists, skipping creation"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 20" class="Class_LineNumber">20:		|</span>	            return;
+<span title="Script line: 21" class="Class_LineNumber">21:		|</span>	        <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 22" class="Class_LineNumber">22:		|</span>	        
+<span title="Script line: 23" class="Class_LineNumber">23:		|</span>	        println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Creating window attributes..."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 24" class="Class_LineNumber">24:		|</span>	        <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> window_attributes = Window::default_attributes<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 25" class="Class_LineNumber">25:		|</span>	            .with_title<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Debug Winit Window"</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 26" class="Class_LineNumber">26:		|</span>	            .with_inner_size<span class="Class_BracketsLVL0">(</span>winit::dpi::LogicalSize::<span class="Class_LogicKeyWord">new</span><span class="Class_BracketsLVL1">(</span><span class="Class_Number">1</span><span class="Class_Number">9</span><span class="Class_Number">2</span><span class="Class_Number">0</span>, <span class="Class_Number">1</span><span class="Class_Number">0</span><span class="Class_Number">8</span><span class="Class_Number">0</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 27" class="Class_LineNumber">27:		|</span>	        
+<span title="Script line: 28" class="Class_LineNumber">28:		|</span>	        println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Calling create_window..."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 29" class="Class_LineNumber">29:		|</span>	        match event_loop.create_window<span class="Class_BracketsLVL0">(</span>window_attributes<span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 30" class="Class_LineNumber">30:		|</span>	            Ok<span class="Class_BracketsLVL0">(</span>window<span class="Class_BracketsLVL0">)</span> => <span class="Class_BracketsLVL3">{</span>
+<span title="Script line: 31" class="Class_LineNumber">31:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Window created! ID: <span class="Class_BracketsLVL3">{</span>:?<span class="Class_BracketsLVL2">}</span>"</span>, window.id<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 32" class="Class_LineNumber">32:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Window visible: <span class="Class_BracketsLVL2">{</span>:?<span class="Class_BracketsLVL2">}</span>"</span>, window.is_visible<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 33" class="Class_LineNumber">33:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Window inner size: <span class="Class_BracketsLVL2">{</span>:?<span class="Class_BracketsLVL2">}</span>"</span>, window.inner_size<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 34" class="Class_LineNumber">34:		|</span>	                
+<span title="Script line: 35" class="Class_LineNumber">35:		|</span>	<span class="Class_CommentTagWord">                // Force show the window</span>
+<span title="Script line: 36" class="Class_LineNumber">36:		|</span>	                window.set_visible<span class="Class_BracketsLVL0">(</span><span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 37" class="Class_LineNumber">37:		|</span>	                window.request_redraw<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 38" class="Class_LineNumber">38:		|</span>	                
+<span title="Script line: 39" class="Class_LineNumber">39:		|</span>	                self.window = Some<span class="Class_BracketsLVL0">(</span>window<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 40" class="Class_LineNumber">40:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Window stored <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> App struct"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 41" class="Class_LineNumber">41:		|</span>	            <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 42" class="Class_LineNumber">42:		|</span>	            Err<span class="Class_BracketsLVL0">(</span>e<span class="Class_BracketsLVL0">)</span> => <span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 43" class="Class_LineNumber">43:		|</span>	                eprintln!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✗ Failed to create window: <span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, e<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 44" class="Class_LineNumber">44:		|</span>	                event_loop.exit<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 45" class="Class_LineNumber">45:		|</span>	            <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 46" class="Class_LineNumber">46:		|</span>	        <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 47" class="Class_LineNumber">47:		|</span>	    <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 48" class="Class_LineNumber">48:		|</span>	
+<span title="Script line: 49" class="Class_LineNumber">49:		|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> window_event<span class="Class_BracketsLVL0">(</span>
+<span title="Script line: 50" class="Class_LineNumber">50:		|</span>	        &<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self,
+<span title="Script line: 51" class="Class_LineNumber">51:		|</span>	        event_loop: &ActiveEventLoop,
+<span title="Script line: 52" class="Class_LineNumber">52:		|</span>	        window_id: WindowId,
+<span title="Script line: 53" class="Class_LineNumber">53:		|</span>	        event: WindowEvent,
+<span title="Script line: 54" class="Class_LineNumber">54:		|</span>	    <span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 55" class="Class_LineNumber">55:		|</span>	        println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Window event: <span class="Class_BracketsLVL1">{</span>:?<span class="Class_BracketsLVL1">}</span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> window <span class="Class_BracketsLVL1">{</span>:?<span class="Class_BracketsLVL1">}</span>"</span>, event, window_id<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 56" class="Class_LineNumber">56:		|</span>	        
+<span title="Script line: 57" class="Class_LineNumber">57:		|</span>	        match event <span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 58" class="Class_LineNumber">58:		|</span>	            WindowEvent::CloseRequested => <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 59" class="Class_LineNumber">59:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Close requested - exiting"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 60" class="Class_LineNumber">60:		|</span>	                event_loop.exit<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 61" class="Class_LineNumber">61:		|</span>	            <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 62" class="Class_LineNumber">62:		|</span>	            WindowEvent::RedrawRequested => <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 63" class="Class_LineNumber">63:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Redraw requested"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 64" class="Class_LineNumber">64:		|</span>	                <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">if</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> Some<span class="Class_BracketsLVL0">(</span>window<span class="Class_BracketsLVL0">)</span> = &self.window <span class="Class_BracketsLVL3">{</span>
+<span title="Script line: 65" class="Class_LineNumber">65:		|</span>	<span class="Class_CommentTagWord">                    // Keep requesting redraws to maintain window</span>
+<span title="Script line: 66" class="Class_LineNumber">66:		|</span>	                    window.request_redraw<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 67" class="Class_LineNumber">67:		|</span>	                <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 68" class="Class_LineNumber">68:		|</span>	            <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 69" class="Class_LineNumber">69:		|</span>	            WindowEvent::Resized<span class="Class_BracketsLVL0">(</span>size<span class="Class_BracketsLVL0">)</span> => <span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 70" class="Class_LineNumber">70:		|</span>	                println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Window resized to: <span class="Class_BracketsLVL2">{</span>:?<span class="Class_BracketsLVL2">}</span>"</span>, size<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 71" class="Class_LineNumber">71:		|</span>	            <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 72" class="Class_LineNumber">72:		|</span>	            _ => <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 73" class="Class_LineNumber">73:		|</span>	        <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 74" class="Class_LineNumber">74:		|</span>	    <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 75" class="Class_LineNumber">75:		|</span>	
+<span title="Script line: 76" class="Class_LineNumber">76:		|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> new_events<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, _event_loop: &ActiveEventLoop, _cause: winit::event::StartCa<span class="Class_LogicKeyWord">use</span><span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 77" class="Class_LineNumber">77:		|</span>	        println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"new_events called"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 78" class="Class_LineNumber">78:		|</span>	    <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 79" class="Class_LineNumber">79:		|</span>	
+<span title="Script line: 80" class="Class_LineNumber">80:		|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> about_to_wait<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> self, _event_loop: &ActiveEventLoop<span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 81" class="Class_LineNumber">81:		|</span>	<span class="Class_CommentTagWord">        // Don't spam this one</span>
+<span title="Script line: 82" class="Class_LineNumber">82:		|</span>	<span class="Class_CommentTagWord">        // println!("about_to_wait called");</span>
+<span title="Script line: 83" class="Class_LineNumber">83:		|</span>	    <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 84" class="Class_LineNumber">84:		|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 85" class="Class_LineNumber">85:		|</span>	
+<span title="Script line: 86" class="Class_LineNumber">86:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">pub</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> Renderer<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span> -> Result&lt<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>, Box&ltdyn std::error::Error>> <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 87" class="Class_LineNumber">87:		|</span>	
+<span title="Script line: 88" class="Class_LineNumber">88:		|</span>	    println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"🚀 Starting winit debug application..."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 89" class="Class_LineNumber">89:		|</span>	    
+<span title="Script line: 90" class="Class_LineNumber">90:		|</span>	<span class="Class_CommentTagWord">    // Check arguments</span>
+<span title="Script line: 91" class="Class_LineNumber">91:		|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> args: Vec&ltString> = env::args<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>.collect<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 92" class="Class_LineNumber">92:		|</span>	    println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Arguments: <span class="Class_BracketsLVL1">{</span>:?<span class="Class_BracketsLVL1">}</span>"</span>, args<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 93" class="Class_LineNumber">93:		|</span>	    
+<span title="Script line: 94" class="Class_LineNumber">94:		|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> arg <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> &args <span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 95" class="Class_LineNumber">95:		|</span>	        <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">if</span></span> arg == <span class="Class_String">"-sys"</span> <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 96" class="Class_LineNumber">96:		|</span>	            println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Found -sys argument - this would normally call TS_System::F_Main_RNil<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 97" class="Class_LineNumber">97:		|</span>	<span class="Class_CommentTagWord">            // Commenting out the actual call for debugging</span>
+<span title="Script line: 98" class="Class_LineNumber">98:		|</span>	<span class="Class_CommentTagWord">            // TS_System::F_Main_RNil();</span>
+<span title="Script line: 99" class="Class_LineNumber">99:		|</span>	            <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">return</span></span> Ok<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 100" class="Class_LineNumber">100:	|</span>	        <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 101" class="Class_LineNumber">101:	|</span>	    <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 102" class="Class_LineNumber">102:	|</span>	    
+<span title="Script line: 103" class="Class_LineNumber">103:	|</span>	    println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Creating event loop..."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 104" class="Class_LineNumber">104:	|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> event_loop = match EventLoop::<span class="Class_LogicKeyWord">new</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 105" class="Class_LineNumber">105:	|</span>	        Ok<span class="Class_BracketsLVL0">(</span>el<span class="Class_BracketsLVL0">)</span> => <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 106" class="Class_LineNumber">106:	|</span>	            println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Event loop created"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 107" class="Class_LineNumber">107:	|</span>	            el
+<span title="Script line: 108" class="Class_LineNumber">108:	|</span>	        <span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 109" class="Class_LineNumber">109:	|</span>	        Err<span class="Class_BracketsLVL0">(</span>e<span class="Class_BracketsLVL0">)</span> => <span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 110" class="Class_LineNumber">110:	|</span>	            eprintln!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✗ Failed to create event loop: <span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>, e<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 111" class="Class_LineNumber">111:	|</span>	            <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">return</span></span> Err<span class="Class_BracketsLVL0">(</span>e.into<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	        <span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 113" class="Class_LineNumber">113:	|</span>	    <span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 114" class="Class_LineNumber">114:	|</span>	    
+<span title="Script line: 115" class="Class_LineNumber">115:	|</span>	    println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Setting control flow to Wait..."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 116" class="Class_LineNumber">116:	|</span>	    event_loop.set_control_flow<span class="Class_BracketsLVL0">(</span>ControlFlow::Wait<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 117" class="Class_LineNumber">117:	|</span>	    
+<span title="Script line: 118" class="Class_LineNumber">118:	|</span>	    <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> app = App <span class="Class_BracketsLVL0">{</span> window: None <span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 119" class="Class_LineNumber">119:	|</span>	    
+<span title="Script line: 120" class="Class_LineNumber">120:	|</span>	    println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Starting event loop..."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 121" class="Class_LineNumber">121:	|</span>	    println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"If you don't see 'resumed<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span> called' next, the issue is with the event loop setup"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 122" class="Class_LineNumber">122:	|</span>	    
+<span title="Script line: 123" class="Class_LineNumber">123:	|</span>	    match event_loop.run_app<span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> app<span class="Class_BracketsLVL0">)</span> <span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 124" class="Class_LineNumber">124:	|</span>	        Ok<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span> => println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✓ Event loop exited normally"</span><span class="Class_BracketsLVL0">)</span>,
+<span title="Script line: 125" class="Class_LineNumber">125:	|</span>	        Err<span class="Class_BracketsLVL0">(</span>e<span class="Class_BracketsLVL0">)</span> => eprintln!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"✗ Event loop error: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>"</span>, e<span class="Class_BracketsLVL0">)</span>,
+<span title="Script line: 126" class="Class_LineNumber">126:	|</span>	    <span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 127" class="Class_LineNumber">127:	|</span>	    
+<span title="Script line: 128" class="Class_LineNumber">128:	|</span>	    Ok<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 130" class="Class_LineNumber">130:	|</span>	
+<span title="Script line: 131" class="Class_LineNumber">131:	|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ma<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 132" class="Class_LineNumber">132:	|</span>	<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 133" class="Class_LineNumber">133:	|</span>		Renderer<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 134" class="Class_LineNumber">134:	|</span>	<span class="Class_BracketsLVL0">}</span>
+</code></pre>
+<pre><code>
+Documented with IVN Documenter
+Documented at: 08.06.2025 19:29:35
+<hr>© IVN - Iterik Viscela Nova, © Matěj Zahradník, © IVN Documenter
+IVN Documenter - 0.01.13.U | 0.04.034.D
+!!DO NOT REMOVE THIS INFORMATION LINE!!
+</code></pre></div><div style="position: fixed;display: flex;flex-direction: column;gap: 0.5vh;top: 0;left: 0;height: 100%;width: 10%;background-color: #1B2A35;overflow-x: scroll;scrollbar-width: 0.5vh;scrollbar-color: #5607F5;"></body>
+</html>
