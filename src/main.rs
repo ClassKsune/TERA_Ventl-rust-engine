@@ -5,8 +5,6 @@ use winit::{
     window::{Window, WindowId},
 };
 
-use std::env;
-
 struct App {
     window: Option<Window>,
 }
