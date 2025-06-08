@@ -278,7 +278,7 @@ fn main()
 	//
 	for I_Argument in PAR_Arguments_StrVec
 	{
-		if(I_Argument	== "-render")
+		if(I_Argument	== "render")
 		{
 			main::Renderer();
 		}

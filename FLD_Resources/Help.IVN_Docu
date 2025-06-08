@@ -5,7 +5,7 @@ CAT: Commands
 <F>:<T>:Commands,Options,Takes in,Explanation
 -h,,--,Shows this message
 -h,Help file name,--,Shows message explaining each exit code
--render,,--,Runs main.rs (Opens Rendered debuging window)
+render,,--,Runs main.rs (Opens Rendered debuging window)
 :<T>:<F>
 
 CAT: Other help files
