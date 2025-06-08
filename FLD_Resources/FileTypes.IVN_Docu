@@ -1,0 +1,5 @@
+﻿SET: File types
+
+<F>:<T>:File .ext,Full .ext name, Purpose
+.level,Level scene,Stores data of objects in scene
+:<T>:<F>

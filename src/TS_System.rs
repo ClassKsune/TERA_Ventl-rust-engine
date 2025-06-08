@@ -34,6 +34,24 @@ Script purpose:		Handles CLI program system & Arguments
 //----------------------------
 // SET: ENUMs / STRUCs
 
+
+
+// ENUMs / STRUCs !REM
+//----------------------------
+// SET: Program Variables
+
+// CLI Program version | ['CV_Str_Version']<LM>
+const CV_Str_Version: &str	= "0.00.00.U | 0.00.001.D";
+
+// Program Variables !REM
+//----------------------------
+// SET: Trigger Functions
+
+/*<F>:CAT: F_Main_RNil
+--Description--: Runs main engine system
+--Returns--: nil
+--Parameters--: nil
+<S>:*/
 pub fn F_Main_RNil()
 {
 	
