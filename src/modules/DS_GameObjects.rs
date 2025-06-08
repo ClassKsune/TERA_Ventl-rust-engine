@@ -15,14 +15,14 @@ Script purpose:		Handles CLI program system & Arguments
 
 // Script Info !REM
 //----------------------------
-// SET: Copliler messages
+// SET: Compliler messages
 
 #![allow(non_snake_case)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 #![allow(unused_parens)]
 
-// Copliler messages !REM
+// Compliler messages !REM
 //----------------------------
 // SET: Package and Import statements
 
@@ -85,6 +85,26 @@ pub struct Primitive3D
 //----------------------------
 // SET: Implementations
 
+//SET: Vector2 implementation
+//<LM>
+impl Vector2
+{
+	/*<F>:CAT:New
+	--Description--: Creates a new instance of ['Vector2']
+	--Returns--: Vector2
+	--Parameters--:
+	<T>:	DataType,Name,Usage
+			isize,PAR_X_Isize,X value
+			isize,PAR_Y_Isize,Y value
+	:<T>:<F>
+	<S>:*/
+	pub fn New(PAR_X_Isize: isize, PAR_Y_Isize: isize) -> Vector2
+	{
+		Vector2 { X: PAR_X_Isize, Y: PAR_Y_Isize }
+	}
+	//:<S>
+	//---
+}
 
 //SET: Vector3 implementation
 //<LM>
@@ -214,6 +234,15 @@ impl Primitive3D
 
 
 // Implementations !REM
+//----------------------------
+// SET: Trigger Functions
+
+pub fn Yes() -> String
+{
+	"Any".to_string()
+}
+
+// Trigger Functions !REM
 //----------------------------
 // SET: AUTORUN Functions
 

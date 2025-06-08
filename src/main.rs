@@ -86,20 +86,8 @@ impl ApplicationHandler for App {
 pub fn Renderer() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("🚀 Starting winit debug application...");
-    
-    // Check arguments
-    let args: Vec<String> = env::args().collect();
-    println!("Arguments: {:?}", args);
-    
-    for arg in &args {
-        if arg == "-sys" {
-            println!("Found -sys argument - this would normally call TS_System::F_Main_RNil()");
-            // Commenting out the actual call for debugging
-            // TS_System::F_Main_RNil();
-            return Ok(());
-        }
-    }
-    
+
+
     println!("Creating event loop...");
     let event_loop = match EventLoop::new() {
         Ok(el) => {

@@ -15,14 +15,14 @@ Script purpose:		Handles CLI program system & Arguments
 
 // Script Info !REM
 //----------------------------
-// SET: Copliler messages
+// SET: Compliler messages
 
 #![allow(non_snake_case)]
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
 #![allow(unused_parens)]
 
-// Copliler messages !REM
+// Compliler messages !REM
 //----------------------------
 // SET: Package and Import statements
 
@@ -210,9 +210,10 @@ fn F_ShowHelp_RNil(PAR_HelpFile_Str: &str)
 	--Description--: Program ENTRY; handles inputted arguments
 	--Returns--:nil
 	--Parameters--: nil
-*/
+:<F>*/
 fn main()
 {
+	// Stores arguments passed in | ['PAR_Arguments_StrVec']<LM>
 	let PAR_Arguments_StrVec: Vec<String>	= env::args().collect();
 
 
@@ -248,7 +249,6 @@ fn main()
 	//:<S>
 	println!("(NOTE):\tCurrent dirrectory: {}\n\tCurrent operating system: {}\n\n", V_Path_CurExeDir.to_str().expect("[ERROR]\tFail with CurExeDir"), env::consts::OS);
 
-
 	// If there's no arguments passed to program;<S>:
 	if(PAR_Arguments_StrVec.len()					< 2)
 	{
@@ -275,13 +275,15 @@ fn main()
 	}
 	//:<S>
 
-	//
+	// Loops via rest of the arguments<LM>
 	for I_Argument in PAR_Arguments_StrVec
 	{
+		// If ``render`` is found as argument, launch debuging rendering window<S>:
 		if(I_Argument	== "render")
 		{
 			main::Renderer();
 		}
+		//:<S>
 	}
 }
 //---
