@@ -194,7 +194,7 @@ fn F_ShowHelp_RNil(PAR_HelpFile_Str: &str)
 	}
 	//:<S>
 
-	println!("\n***********************\n(NOTE)\tProgram showed help message. [EXIT CODE: 2]\n***********************\n");
+	println!("\n***********************\n(NOTE):\tProgram showed help message. [EXIT CODE: 2]\n***********************\n");
 
 	// Program EXIT - __--2 - Program showed help message--__<LM>
 	exit(2);
