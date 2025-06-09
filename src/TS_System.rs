@@ -1,6 +1,6 @@
 ﻿// SET: Script Info
 /*<I>:
-© IVN - Iterik Viscela Nova, Matěj Zahradník, Open Source
+© IVN - Iterik Viscela Nova, Matěj Zahradník, © TERA_Ventl, Open Source
 Development Standard:	IVN_ATK-ATL_Provisions:TERA:762:XR
 ------------------------------
 Project leader:		-
