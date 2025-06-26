@@ -10,6 +10,7 @@
 --,--
 10,Incorrect argument syntax passed in
 11,Incorrect path
+12,Failed to load environmental variable(s)
 --,--
 20,Failed to obtain program path / get parent path
 21,Help file failed to load/not present
