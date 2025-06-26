@@ -1,12 +1,12 @@
 ﻿SET: CLI Renamer System | EXIT Codes
 
 <F>:<T>:Code,Meaning
+GENERAL,Related issues
 0,Program finished successfully
 --,--
 1,Program received no arguments
 2,Program showed help message
 3,Data parsing resulted in "none" option
-4,Program added alias
 --,--
 10,Incorrect argument syntax passed in
 11,Incorrect path
@@ -15,6 +15,10 @@
 20,Failed to obtain program path / get parent path
 21,Help file failed to load/not present
 22,Failed to get files within path
+--,--
+SERVICE,Related issues
+--,--
+APP,Related issues
 --,--
 OS,Related issues
 --,--
