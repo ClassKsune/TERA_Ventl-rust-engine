@@ -1,5 +1,5 @@
 [package]
-name = "TERA_Ventl_Engine"
+name = "TERA_Ventl_Window"
 authors = ["Matěj Zahradník [The_Universality]", "Kryštof 'Artie' Novotný"]
 version = "0.1.0"
 edition = "2024"
@@ -7,7 +7,7 @@ default-run = "TERA_Ventl_System"
 readme = "./README.md"
 
 [lib]
-path = "./src/TS_System.rs"
+path = "./src/Modules/DS_GameObjects.rs"
 
 [[bin]]
 path = "./src/TS_System.rs"

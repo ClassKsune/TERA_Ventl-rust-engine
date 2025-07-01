@@ -29,18 +29,20 @@ Script purpose:		Defines GameObjects
 // SET: Package and Import statements
 
 //<S>:
-
+use std;
 //:<S>
 
 // Package and Import statements !REM
 //----------------------------
 // SET: ENUMs / STRUCs
 
+
 pub enum Primitive2DShape
 {
 	Rectangle,
 	Circle
 }
+
 
 pub enum Primitive3DShape
 {
@@ -49,37 +51,74 @@ pub enum Primitive3DShape
 	Cilinder
 }
 
+//----------------------------
+
+pub struct Color
+{
+	R: f32,
+	G: f32,
+	B: f32,
+	A: f32
+}
+
 pub struct Vector2
 {
-	X: isize,
-	Y: isize
+	X: f32,
+	Y: f32
 }
+
+
 pub struct Vector3
 {
-	X: isize,
-	Y: isize,
-	Z: isize
+	X: f32,
+	Y: f32,
+	Z: f32
 }
+
 
 pub struct Point2D
 {
 	Position: Vector2
 }
+
+
 pub struct Point3D
 {
 	Position: Vector3
 }
 
-pub struct Primitive2D
+
+pub struct Object2D
 {
 	Position: Vector2,
 	Size: Vector2,
+}
+
+pub struct Primitive2D
+{
+	pub Base: Object2D,
 	Shape: Primitive2DShape
 }
-pub struct Primitive3D
+
+//SET: Object3D
+/*--Object3D-- is a base for all 3D ``based`` objects like primitive, mesh, etc
+It composes of:
+<T>:Name,Type,Usage
+Position,Vector3,The object position in 3D space
+Size, Vector3,The object's size in 3D space
+:<T>
+<S>:*/
+pub struct Object3D
 {
 	Position: Vector3,
 	Size: Vector3,
+}
+//:<S>
+
+
+pub struct Primitive3D
+{
+	pub Base: Object3D,
 	Shape: Primitive3DShape
 }
 
@@ -92,7 +131,7 @@ pub struct Primitive3D
 impl Vector2
 {
 	/*<F>:CAT:New
-	--Description--: Creates a new instance of ['Vector2']
+	--Description--: Creates a new instance of ['Vector2'] using --isize-- data type
 	--Returns--: Vector2
 	--Parameters--:
 	<T>:	DataType,Name,Usage
@@ -102,7 +141,23 @@ impl Vector2
 	<S>:*/
 	pub fn New(PAR_X_Isize: isize, PAR_Y_Isize: isize) -> Vector2
 	{
-		Vector2 { X: PAR_X_Isize, Y: PAR_Y_Isize }
+		Vector2 { X: PAR_X_Isize as f32, Y: PAR_Y_Isize as f32 }
+	}
+	//:<S>
+
+	//---
+	/*<F>:CAT:New_FromF32
+	--Description--: Creates a new instance of ['Vector2'] using --f32-- data type
+	--Returns--: Vector2
+	--Parameters--:
+	<T>:	DataType,Name,Usage
+			f32,PAR_X_F32,X value
+			f32,PAR_Y_F32,Y value
+	:<T>:<F>
+	<S>:*/
+	pub fn New_FromF32(PAR_X_F32: f32, PAR_Y_F32: f32) -> Vector2
+	{
+		Vector2 { X: PAR_X_F32, Y: PAR_Y_F32 }
 	}
 	//:<S>
 	//---
@@ -113,7 +168,7 @@ impl Vector2
 impl Vector3
 {
 	/*<F>:CAT:New
-	--Description--: Creates a new instance of ['Vector3']
+	--Description--: Creates a new instance of ['Vector3'] using --isize-- data type
 	--Returns--: Vector3
 	--Parameters--:
 	<T>:	DataType,Name,Usage
@@ -124,32 +179,49 @@ impl Vector3
 	<S>:*/
 	pub fn New(PAR_X_Isize: isize, PAR_Y_Isize: isize, PAR_Z_Isize: isize) -> Vector3
 	{
-		Vector3 { X: PAR_X_Isize, Y: PAR_Y_Isize, Z: PAR_Z_Isize }
+		Vector3 { X: PAR_X_Isize as f32, Y: PAR_Y_Isize as f32, Z: PAR_Z_Isize as f32}
+	}
+	//:<S>
+	//---
+	/*<F>:CAT:New_FromF32
+	--Description--: Creates a new instance of ['Vector3'] using --f32-- data type
+	--Returns--: Vector3
+	--Parameters--:
+	<T>:	DataType,Name,Usage
+			f32,PAR_X_F32,X value
+			f32,PAR_Y_F32,Y value
+			f32,PAR_Z_F32,Z value
+	:<T>:<F>
+	<S>:*/
+	pub fn New_FromF32(PAR_X_F32: f32, PAR_Y_F32: f32, PAR_Z_F32: f32) -> Vector3
+	{
+		Vector3 { X: PAR_X_F32, Y: PAR_Y_F32, Z: PAR_Z_F32 }
 	}
 	//:<S>
 	//---
 }
 
-//SET: Primitive3D implementation
+
+//SET: Object3D implementation
 //<LM>
-impl Primitive3D
+impl Object3D
 {
 	/*<F>:CAT:New
-	--Description--: Creates a new instance of ['Primitive3D']
-	--Returns--: Primitive3D
+	--Description--: Creates a new instance of ['Vector3']
+	--Returns--: Vector3
 	--Parameters--:
 	<T>:	DataType,Name,Usage
-			Vector3,PAR_Pos_Vec3,3D location to which new instance should be placed
-			Vector3,PAR_Size_Vec3,3D size of new instance
-			Primitive3DShape,PAR_Shape_E,3D Shape of the new instance
+			Vector3,PAR_Position_Vec3,Sets the positition of the newly created 3D object
+			Vector3,PAR_Size_Vec3,Sets the size of the newly created 3D object
 	:<T>:<F>
 	<S>:*/
-	pub fn New(PAR_Pos_Vec3: Vector3, PAR_Size_Vec3: Vector3, PAR_Shape_E: Primitive3DShape) -> Primitive3D
+	pub fn New(PAR_Position_Vec3: Vector3, PAR_Size_Vec3: Vector3) -> Object3D
 	{
-		Primitive3D { Position: PAR_Pos_Vec3, Size: PAR_Size_Vec3, Shape: PAR_Shape_E }
+		Object3D { Position: PAR_Position_Vec3, Size: PAR_Size_Vec3 }
 	}
 	//:<S>
 	//---
+
 
 	/*<F>:CAT:ReLocate
 	--Description--: Moves this instance to new 3D absolute position
@@ -177,21 +249,6 @@ impl Primitive3D
 	pub fn ReSize(&mut self, PAR_Size_Vec3: Vector3)
 	{
 		self.Size	= PAR_Size_Vec3;
-	}
-	//:<S>
-	//---
-
-	/*<F>:CAT:ReShape
-	--Description--: Changes shape of this instance
-	--Returns--:nil
-	--Parameters--:
-	<T>:	DataType,Name,Usage
-			Primitive3DShape,PAR_Shape_E,New shape for this instance
-	:<T>:<F>
-	<S>:*/
-	pub fn ReShape(&mut self, PAR_Shape_E: Primitive3DShape)
-	{
-		self.Shape	= PAR_Shape_E;
 	}
 	//:<S>
 	//---
@@ -232,6 +289,44 @@ impl Primitive3D
 	//:<S>
 	//---
 }
+
+
+//SET: Primitive3D implementation
+//<LM>
+impl Primitive3D
+{
+	/*<F>:CAT:New
+	--Description--: Creates a new instance of ['Primitive3D']
+	--Returns--: Primitive3D
+	--Parameters--:
+	<T>:	DataType,Name,Usage
+			Vector3,PAR_Pos_Vec3,3D location to which new instance should be placed
+			Vector3,PAR_Size_Vec3,3D size of new instance
+			Primitive3DShape,PAR_Shape_E,3D Shape of the new instance
+	:<T>:<F>
+	<S>:*/
+	pub fn New(PAR_Pos_Vec3: Vector3, PAR_Size_Vec3: Vector3, PAR_Shape_E: Primitive3DShape) -> Primitive3D
+	{
+		Primitive3D { Base: Object3D::New(PAR_Pos_Vec3, PAR_Size_Vec3), Shape: PAR_Shape_E }
+	}
+	//:<S>
+	//---
+
+	/*<F>:CAT:ReShape
+	--Description--: Changes shape of this instance
+	--Returns--:nil
+	--Parameters--:
+	<T>:	DataType,Name,Usage
+			Primitive3DShape,PAR_Shape_E,New shape for this instance
+	:<T>:<F>
+	<S>:*/
+	pub fn ReShape(&mut self, PAR_Shape_E: Primitive3DShape)
+	{
+		self.Shape	= PAR_Shape_E;
+	}
+	//:<S>
+	//---
+}
 //---
 
 
@@ -241,7 +336,11 @@ impl Primitive3D
 
 pub fn Yes() -> String
 {
-	"Any".to_string()
+	let mut box3d: Primitive3D = Primitive3D::New(Vector3::New(1, 5, 6), Vector3::New(5, 5, 5), Primitive3DShape::Cilinder);
+
+	box3d.Base.ReSize(Vector3::New(5, 5, 5));
+
+	"Yes".to_string()
 }
 
 // Trigger Functions !REM
