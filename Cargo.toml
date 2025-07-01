@@ -1,13 +1,21 @@
 [package]
 name = "TERA_Ventl_Window"
-authors = ["Matěj Zahradník [The_Universality]", "Kryštof 'Artie' Novotný"]
 version = "0.1.0"
 edition = "2024"
 default-run = "TERA_Ventl_System"
+
+# Unrequired fo functionality
+authors = ["Matěj Zahradník [The_Universality]", "Kryštof 'Artie' Novotný"]
 readme = "./README.md"
+description = "In developmen RUST engine"
+documentation = "https://engine.tsk-mng-access.org/FLD_Documentation/" # May need to create a proper website - tercial task
+license = "MIT" # I think - We need to discuss this @ClassKsune
+links = "https://github.com/ClassKsune/TERA_Ventl-rust-engine"
+
 
 [lib]
 path = "./src/Modules/DS_GameObjects.rs"
+# Might assign a folder - I'll see
 
 [[bin]]
 path = "./src/TS_System.rs"

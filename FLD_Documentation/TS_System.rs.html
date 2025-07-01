@@ -37,7 +37,7 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <div style="position: absolute;bottom: 0;right: 0;left: 11%;height: 95%;width: 89%;"><h1>TS_System.rs<img src="https://resource.tsk-mng-access.org/FLD_Global/FLD_Image/ICON_Translater.png" title="IVN Documenter" style="width:40px;height:40px;"></h1>
 <hr>
 <pre><code>
-<span title="Script line: 3" class="Class_LineNumber">3:		|</span>	© IVN - Iterik Viscela Nova, Matěj Zahradník, Open Source
+<span title="Script line: 3" class="Class_LineNumber">3:		|</span>	© IVN - Iterik Viscela Nova, Matěj Zahradník, © TERA_Ventl, Open Source
 <span title="Script line: 4" class="Class_LineNumber">4:		|</span>	Development Standard:	IVN_ATK-ATL_Provisions:TERA:762:XR
 <span title="Script line: 5" class="Class_LineNumber">5:		|</span>	------------------------------
 <span title="Script line: 6" class="Class_LineNumber">6:		|</span>	Project leader:		-
@@ -50,19 +50,26 @@ td, th{border: 1px solid #000000;text-align: left;padding: 10px;}
 <span title="Script line: 13" class="Class_LineNumber">13:		|</span>	Script purpose:		Handles CLI program system & Arguments
 <span title="Script line: 14" class="Class_LineNumber">14:		|</span>	</pre></code>
 <hr>
-<h2 id="Copliler_messages">Copliler messages</h2>
+<h2 id="Compliler_messages">Compliler messages</h2>
+<pre><code>
+<span title="Script line: 21" class="Class_LineNumber">21:		|</span>	#![allow(non_snake_case)]
+<span title="Script line: 22" class="Class_LineNumber">22:		|</span>	#![allow(non_camel_case_types)]
+<span title="Script line: 23" class="Class_LineNumber">23:		|</span>	#![allow(non_upper_case_globals)]
+<span title="Script line: 24" class="Class_LineNumber">24:		|</span>	#![allow(unused_parens)]
+<span title="Script line: 25" class="Class_LineNumber">25:		|</span>	<span class="Class_CommentTagWord">//</pre></code></span>
 <hr>
 <h2 id="Package_and_Import_statements">Package and Import statements</h2>
 <pre><code>
-<span title="Script line: 30" class="Class_LineNumber">30:		|</span>	mod main;
-<span title="Script line: 32" class="Class_LineNumber">32:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">use</span></span> <span class="Class_BracketsLVL0">{</span>std::<span class="Class_BracketsLVL1">{</span>self, env, fs::File, io::Read, ops::Add, path::<span class="Class_BracketsLVL2">{</span>Path, PathBuf<span class="Class_BracketsLVL2">}</span>, process::exit<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 33" class="Class_LineNumber">33:		|</span>	</pre></code>
+<span title="Script line: 32" class="Class_LineNumber">32:		|</span>	mod main;
+<span title="Script line: 33" class="Class_LineNumber">33:		|</span>	mod Modules;
+<span title="Script line: 35" class="Class_LineNumber">35:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">use</span></span> <span class="Class_BracketsLVL0">{</span>std::<span class="Class_BracketsLVL1">{</span>self, env, fs::File, io::Read, ops::Add, path::<span class="Class_BracketsLVL2">{</span>Path, PathBuf<span class="Class_BracketsLVL2">}</span>, process::exit<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 36" class="Class_LineNumber">36:		|</span>	</pre></code>
 <hr>
 <h2 id="ENUMs_/_STRUCs">ENUMs / STRUCs</h2>
 <hr>
 <h2 id="Program_Variables">Program Variables</h2>
 CLI Program version | <code>CV_Str_Version</code>
-<pre><code><span title="Script line: 46" class="Class_LineNumber">46:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">const</span></span> CV_Str_Version: &str	= <span class="Class_String">"<span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.U | <span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span><span class="Class_Number">1</span>.D"</span>;</pre></code>
+<pre><code><span title="Script line: 49" class="Class_LineNumber">49:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">const</span></span> CV_Str_Version: &str	= <span class="Class_String">"<span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.U | <span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span><span class="Class_Number">1</span>.D"</span>;</pre></code>
 <hr>
 <h2 id="Trigger_Functions">Trigger Functions</h2>
 <blockquote><h2 id="F_ShowHelp_RNil">F_ShowHelp_RNil</h2>
@@ -72,100 +79,100 @@ CLI Program version | <code>CV_Str_Version</code>
 <tr><table><th style="text-align: right;">	DataType</th><th>Name</th><th>Usage</th></tr>
 <tr><td style="text-align: right;">&str</td><td>PAR_HelpFile_Str</td><td>If empty; shows general help; otherwise show help from selected file</td></tr>
 </table></blockquote>
-<pre><code><span title="Script line: 61" class="Class_LineNumber">61:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>PAR_HelpFile_Str: &<span class="Class_DataTypeWord">str</span><span class="Class_BracketsLVL0">)</span></pre></code>
+<pre><code><span title="Script line: 64" class="Class_LineNumber">64:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>PAR_HelpFile_Str: &<span class="Class_DataTypeWord">str</span><span class="Class_BracketsLVL0">)</span></pre></code>
 Path of this program - needed for ['V_Path_EXEDir'] | ['V_Path_EXEPath']<pre><code>
-<span title="Script line: 64" class="Class_LineNumber">64:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEPath: PathBuf		= match env::current_exe<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 65" class="Class_LineNumber">65:		|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 66" class="Class_LineNumber">66:		|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
-<span title="Script line: 67" class="Class_LineNumber">67:		|</span>			<span class="Class_BracketsLVL1">{</span>	// This is a RETURN statement that REJECTS the RETURN keyword
-<span title="Script line: 68" class="Class_LineNumber">68:		|</span>				RESULT_SUCCESS
-<span title="Script line: 69" class="Class_LineNumber">69:		|</span>			<span class="Class_BracketsLVL1">}</span>,
-<span title="Script line: 70" class="Class_LineNumber">70:		|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
-<span title="Script line: 71" class="Class_LineNumber">71:		|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 72" class="Class_LineNumber">72:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 74" class="Class_LineNumber">74:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
-<span title="Script line: 75" class="Class_LineNumber">75:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 76" class="Class_LineNumber">76:		|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 77" class="Class_LineNumber">77:		|</span>		<span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 78" class="Class_LineNumber">78:		|</span>	</pre></code>
+<span title="Script line: 67" class="Class_LineNumber">67:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEPath: PathBuf		= match env::current_exe<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 68" class="Class_LineNumber">68:		|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 69" class="Class_LineNumber">69:		|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
+<span title="Script line: 70" class="Class_LineNumber">70:		|</span>			<span class="Class_BracketsLVL1">{</span>	// This is a RETURN statement that REJECTS the RETURN keyword
+<span title="Script line: 71" class="Class_LineNumber">71:		|</span>				RESULT_SUCCESS
+<span title="Script line: 72" class="Class_LineNumber">72:		|</span>			<span class="Class_BracketsLVL1">}</span>,
+<span title="Script line: 73" class="Class_LineNumber">73:		|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
+<span title="Script line: 74" class="Class_LineNumber">74:		|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 75" class="Class_LineNumber">75:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 77" class="Class_LineNumber">77:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
+<span title="Script line: 78" class="Class_LineNumber">78:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 79" class="Class_LineNumber">79:		|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 80" class="Class_LineNumber">80:		|</span>		<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 81" class="Class_LineNumber">81:		|</span>	</pre></code>
 Directory in which this program is located - <i>used to access program related files</i> | ['V_Path_EXEDir']<pre><code>
-<span title="Script line: 81" class="Class_LineNumber">81:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEDir: &Path		= match V_Path_EXEPath.parent<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 82" class="Class_LineNumber">82:		|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 83" class="Class_LineNumber">83:		|</span>			Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
-<span title="Script line: 84" class="Class_LineNumber">84:		|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 85" class="Class_LineNumber">85:		|</span>				RESULT_SUCCESS
-<span title="Script line: 86" class="Class_LineNumber">86:		|</span>			<span class="Class_BracketsLVL1">}</span>,
-<span title="Script line: 87" class="Class_LineNumber">87:		|</span>			None						=>
-<span title="Script line: 88" class="Class_LineNumber">88:		|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 89" class="Class_LineNumber">89:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> parent path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 91" class="Class_LineNumber">91:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
-<span title="Script line: 92" class="Class_LineNumber">92:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 93" class="Class_LineNumber">93:		|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 94" class="Class_LineNumber">94:		|</span>		<span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 95" class="Class_LineNumber">95:		|</span>	</pre></code>
+<span title="Script line: 84" class="Class_LineNumber">84:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEDir: &Path		= match V_Path_EXEPath.parent<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 85" class="Class_LineNumber">85:		|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 86" class="Class_LineNumber">86:		|</span>			Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
+<span title="Script line: 87" class="Class_LineNumber">87:		|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 88" class="Class_LineNumber">88:		|</span>				RESULT_SUCCESS
+<span title="Script line: 89" class="Class_LineNumber">89:		|</span>			<span class="Class_BracketsLVL1">}</span>,
+<span title="Script line: 90" class="Class_LineNumber">90:		|</span>			None						=>
+<span title="Script line: 91" class="Class_LineNumber">91:		|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 92" class="Class_LineNumber">92:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> parent path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 94" class="Class_LineNumber">94:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
+<span title="Script line: 95" class="Class_LineNumber">95:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 96" class="Class_LineNumber">96:		|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 97" class="Class_LineNumber">97:		|</span>		<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 98" class="Class_LineNumber">98:		|</span>	</pre></code>
 Stores relative path & name of help file | <code>V_Str_FileName</code>
 Stores path to related help file | <code>V_Path_FilePath</code>
-<pre><code><span title="Script line: 101" class="Class_LineNumber">101:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_FilePath: PathBuf	= V_Path_EXEDir.jo<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL1">(</span>PAR_HelpFile_Str == <span class="Class_String">""</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program GENERAL meaning:\n"</span><span class="Class_BracketsLVL1">)</span>; <span class="Class_String">"FLD_Resources/Help.IVN_Docu"</span><span class="Class_BracketsLVL0">}</span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program SPECIFIC help: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>,PAR_HelpFile_Str<span class="Class_BracketsLVL1">)</span>; V_Str_FileName<span class="Class_BracketsLVL0">}</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
+<pre><code><span title="Script line: 104" class="Class_LineNumber">104:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_FilePath: PathBuf	= V_Path_EXEDir.jo<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL1">(</span>PAR_HelpFile_Str == <span class="Class_String">""</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program GENERAL meaning:\n"</span><span class="Class_BracketsLVL1">)</span>; <span class="Class_String">"FLD_Resources/Help.IVN_Docu"</span><span class="Class_BracketsLVL0">}</span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program SPECIFIC help: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>,PAR_HelpFile_Str<span class="Class_BracketsLVL1">)</span>; V_Str_FileName<span class="Class_BracketsLVL0">}</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
 Checks if file exists<pre><code>
-<span title="Script line: 105" class="Class_LineNumber">105:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>Path::exists<span class="Class_BracketsLVL1">(</span>V_Path_FilePath.as_path<span class="Class_BracketsLVL2">(</span><span class="Class_BracketsLVL2">)</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">false</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 106" class="Class_LineNumber">106:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 107" class="Class_LineNumber">107:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tHelp file failed to load/not present. <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n<span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>, V_Path_EXEPath.as_path<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.to_string_lossy<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 109" class="Class_LineNumber">109:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--21 - Help file failed to load/not present--__&ltLM></span>
-<span title="Script line: 110" class="Class_LineNumber">110:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 111" class="Class_LineNumber">111:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	</pre></code>
+<span title="Script line: 108" class="Class_LineNumber">108:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>Path::exists<span class="Class_BracketsLVL1">(</span>V_Path_FilePath.as_path<span class="Class_BracketsLVL2">(</span><span class="Class_BracketsLVL2">)</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">false</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 109" class="Class_LineNumber">109:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 110" class="Class_LineNumber">110:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tHelp file failed to load/not present. <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n<span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>, V_Path_EXEPath.as_path<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.to_string_lossy<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--21 - Help file failed to load/not present--__&ltLM></span>
+<span title="Script line: 113" class="Class_LineNumber">113:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 114" class="Class_LineNumber">114:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 115" class="Class_LineNumber">115:	|</span>	</pre></code>
 Attempts to obain file containing Exit Codes | <code>V_File_ExitCodes</code>
-<pre><code><span title="Script line: 115" class="Class_LineNumber">115:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_File_ExitCodes: File	= File::open<span class="Class_BracketsLVL0">(</span>V_Path_FilePath<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"!ALERT! File obtain/read failed"</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
+<pre><code><span title="Script line: 118" class="Class_LineNumber">118:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_File_ExitCodes: File	= File::open<span class="Class_BracketsLVL0">(</span>V_Path_FilePath<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"!ALERT! File obtain/read failed"</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
 A string to which will be stored contents of ExitCodes files | <code>V_Str_ReadData</code>
-<pre><code><span title="Script line: 118" class="Class_LineNumber">118:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData: String	= String::<span class="Class_LogicKeyWord">new</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
+<pre><code><span title="Script line: 121" class="Class_LineNumber">121:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData: String	= String::<span class="Class_LogicKeyWord">new</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
 Used as a filtering for ExitCodes file to not show anything outside table of this file | <code>V_Bool_IsInCodes</code>
-<pre><code><span title="Script line: 120" class="Class_LineNumber">120:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Bool_IsInCodes: bool	= false;</pre></code>
+<pre><code><span title="Script line: 123" class="Class_LineNumber">123:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Bool_IsInCodes: bool	= false;</pre></code>
 Reads ExitCodes file and stores its content as string into <code>V_Str_ReadData</code>
-<pre><code><span title="Script line: 123" class="Class_LineNumber">123:	|</span>		V_File_ExitCodes.read_to_<span class="Class_DataTypeWord">string</span><span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"msg"</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
+<pre><code><span title="Script line: 126" class="Class_LineNumber">126:	|</span>		V_File_ExitCodes.read_to_<span class="Class_DataTypeWord">string</span><span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"msg"</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
 <tr><td style="text-align: right;">For each line of ExitCodes file contents</td><td><pre><code></td></tr>
-<span title="Script line: 127" class="Class_LineNumber">127:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Str <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> V_Str_ReadData.split<span class="Class_BracketsLVL0">(</span>'\n'<span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 128" class="Class_LineNumber">128:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh end tag, cease printing ['I_Str']</span>
-<span title="Script line: 130" class="Class_LineNumber">130:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">":&ltT>:&ltF>"</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 131" class="Class_LineNumber">131:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 132" class="Class_LineNumber">132:	|</span>				V_Bool_IsInCodes				= false;
-<span title="Script line: 133" class="Class_LineNumber">133:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"-------------------------------------\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 134" class="Class_LineNumber">134:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 135" class="Class_LineNumber">135:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh start tag, start printing ['I_Str']</span>
-<span title="Script line: 136" class="Class_LineNumber">136:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">"&ltF>:&ltT>:"</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 137" class="Class_LineNumber">137:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 138" class="Class_LineNumber">138:	|</span>				V_Bool_IsInCodes				= true;
-<span title="Script line: 140" class="Class_LineNumber">140:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Str_EditedStr: String		= I_Str.replace<span class="Class_BracketsLVL0">(</span><span class="Class_String">"&ltF>:&ltT>:"</span>, <span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 142" class="Class_LineNumber">142:	|</span>	<span class="Class_CommentTagWord">			// Stored fist element of help file line | ['V_StrSplit_']&ltS>:</span>
-<span title="Script line: 143" class="Class_LineNumber">143:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match V_Str_EditedStr.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 144" class="Class_LineNumber">144:	|</span>				<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 145" class="Class_LineNumber">145:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
-<span title="Script line: 146" class="Class_LineNumber">146:	|</span>					<span class="Class_BracketsLVL3">{</span>
-<span title="Script line: 147" class="Class_LineNumber">147:	|</span>						RESULT_SUCCESS
-<span title="Script line: 148" class="Class_LineNumber">148:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 149" class="Class_LineNumber">149:	|</span>					None						=>
-<span title="Script line: 150" class="Class_LineNumber">150:	|</span>					<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 151" class="Class_LineNumber">151:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
-<span title="Script line: 152" class="Class_LineNumber">152:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 153" class="Class_LineNumber">153:	|</span>				<span class="Class_BracketsLVL1">}</span>;
-<span title="Script line: 154" class="Class_LineNumber">154:	|</span>	</pre></code>
+<span title="Script line: 130" class="Class_LineNumber">130:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Str <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> V_Str_ReadData.split<span class="Class_BracketsLVL0">(</span>'\n'<span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 131" class="Class_LineNumber">131:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 132" class="Class_LineNumber">132:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh end tag, cease printing ['I_Str']</span>
+<span title="Script line: 133" class="Class_LineNumber">133:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">":&ltT>:&ltF>"</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 134" class="Class_LineNumber">134:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 135" class="Class_LineNumber">135:	|</span>				V_Bool_IsInCodes				= false;
+<span title="Script line: 136" class="Class_LineNumber">136:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"-------------------------------------\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 137" class="Class_LineNumber">137:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 138" class="Class_LineNumber">138:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh start tag, start printing ['I_Str']</span>
+<span title="Script line: 139" class="Class_LineNumber">139:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">"&ltF>:&ltT>:"</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 140" class="Class_LineNumber">140:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 141" class="Class_LineNumber">141:	|</span>				V_Bool_IsInCodes				= true;
+<span title="Script line: 143" class="Class_LineNumber">143:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Str_EditedStr: String		= I_Str.replace<span class="Class_BracketsLVL0">(</span><span class="Class_String">"&ltF>:&ltT>:"</span>, <span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 145" class="Class_LineNumber">145:	|</span>	<span class="Class_CommentTagWord">			// Stored fist element of help file line | ['V_StrSplit_']&ltS>:</span>
+<span title="Script line: 146" class="Class_LineNumber">146:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match V_Str_EditedStr.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 147" class="Class_LineNumber">147:	|</span>				<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 148" class="Class_LineNumber">148:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
+<span title="Script line: 149" class="Class_LineNumber">149:	|</span>					<span class="Class_BracketsLVL3">{</span>
+<span title="Script line: 150" class="Class_LineNumber">150:	|</span>						RESULT_SUCCESS
+<span title="Script line: 151" class="Class_LineNumber">151:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 152" class="Class_LineNumber">152:	|</span>					None						=>
+<span title="Script line: 153" class="Class_LineNumber">153:	|</span>					<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 154" class="Class_LineNumber">154:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
+<span title="Script line: 155" class="Class_LineNumber">155:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 156" class="Class_LineNumber">156:	|</span>				<span class="Class_BracketsLVL1">}</span>;
+<span title="Script line: 157" class="Class_LineNumber">157:	|</span>	</pre></code>
 <tr><td style="text-align: right;">If <code>V_Bool_IsInCodes</code> is <b>true</b></td><td> print ['I_Str']</td></tr>
 Stored fist element of help file line | ['V_StrSplit_']<pre><code>
-<span title="Script line: 171" class="Class_LineNumber">171:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match I_Str.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 172" class="Class_LineNumber">172:	|</span>				<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 173" class="Class_LineNumber">173:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>	=>
-<span title="Script line: 174" class="Class_LineNumber">174:	|</span>					<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 175" class="Class_LineNumber">175:	|</span>						RESULT_SUCCESS
-<span title="Script line: 176" class="Class_LineNumber">176:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 177" class="Class_LineNumber">177:	|</span>					None						=>
-<span title="Script line: 178" class="Class_LineNumber">178:	|</span>					<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 179" class="Class_LineNumber">179:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
-<span title="Script line: 180" class="Class_LineNumber">180:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 181" class="Class_LineNumber">181:	|</span>				<span class="Class_BracketsLVL1">}</span>;
-<span title="Script line: 182" class="Class_LineNumber">182:	|</span>	</pre></code>
+<span title="Script line: 174" class="Class_LineNumber">174:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match I_Str.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 175" class="Class_LineNumber">175:	|</span>				<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 176" class="Class_LineNumber">176:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>	=>
+<span title="Script line: 177" class="Class_LineNumber">177:	|</span>					<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 178" class="Class_LineNumber">178:	|</span>						RESULT_SUCCESS
+<span title="Script line: 179" class="Class_LineNumber">179:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 180" class="Class_LineNumber">180:	|</span>					None						=>
+<span title="Script line: 181" class="Class_LineNumber">181:	|</span>					<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 182" class="Class_LineNumber">182:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
+<span title="Script line: 183" class="Class_LineNumber">183:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 184" class="Class_LineNumber">184:	|</span>				<span class="Class_BracketsLVL1">}</span>;
+<span title="Script line: 185" class="Class_LineNumber">185:	|</span>	</pre></code>
 :&ltS>
 Program EXIT - <u><b>2 - Program showed help message</b></u>
-<pre><code><span title="Script line: 200" class="Class_LineNumber">200:	|</span>		exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
+<pre><code><span title="Script line: 203" class="Class_LineNumber">203:	|</span>		exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
 <hr>
 <hr>
 <h2 id="AUTORUN_Functions">AUTORUN Functions</h2>
@@ -173,63 +180,74 @@ Program EXIT - <u><b>2 - Program showed help message</b></u>
 <b>Description</b>: Program ENTRY; handles inputted arguments
 <b>Returns</b>:nil
 <b>Parameters</b>: nil
+</blockquote>
+Stores arguments passed in | <code>PAR_Arguments_StrVec</code>
+<pre><code><span title="Script line: 220" class="Class_LineNumber">220:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> PAR_Arguments_StrVec: Vec&ltString>	= env::args<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>.collect<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;</pre></code>
 Introduction message <pre><code>
-<span title="Script line: 220" class="Class_LineNumber">220:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+  +---+              +---+  +---+    +---+\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 221" class="Class_LineNumber">221:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |   \\   \\            /   /   |   |\\   |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 222" class="Class_LineNumber">222:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |    \\   \\          /   /    |   | \\  |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 223" class="Class_LineNumber">223:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |     \\   \\        /   /     |   |  \\ |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 224" class="Class_LineNumber">224:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |      \\   \\      /   /      |   |   \\|   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 225" class="Class_LineNumber">225:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |       \\   \\    /   /       |   |\\   \\   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 226" class="Class_LineNumber">226:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |        \\   \\  /   /        |   | \\   \\  |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 227" class="Class_LineNumber">227:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |         \\   \\/   /         |   |  \\   \\ |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 228" class="Class_LineNumber">228:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |          \\      /          |   |   \\   \\|\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 229" class="Class_LineNumber">229:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+           +----+           +---+    +---+\n\n***********************\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 230" class="Class_LineNumber">230:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Engine System Service\n\n<span class="Class_BracketsLVL1">(</span>C<span class="Class_BracketsLVL1">)</span> Open Source.\nVersion: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n\n| TERA_Ventl - Engine System Service |\n\n***********************\n"</span>,<span class="Class_BracketsLVL1">{</span>CV_Str_Version<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 231" class="Class_LineNumber">231:	|</span>	</pre></code>
+<span title="Script line: 224" class="Class_LineNumber">224:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+  +---+              +---+  +---+    +---+\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 225" class="Class_LineNumber">225:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |   \\   \\            /   /   |   |\\   |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 226" class="Class_LineNumber">226:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |    \\   \\          /   /    |   | \\  |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 227" class="Class_LineNumber">227:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |     \\   \\        /   /     |   |  \\ |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 228" class="Class_LineNumber">228:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |      \\   \\      /   /      |   |   \\|   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 229" class="Class_LineNumber">229:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |       \\   \\    /   /       |   |\\   \\   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 230" class="Class_LineNumber">230:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |        \\   \\  /   /        |   | \\   \\  |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 231" class="Class_LineNumber">231:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |         \\   \\/   /         |   |  \\   \\ |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 232" class="Class_LineNumber">232:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |          \\      /          |   |   \\   \\|\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 233" class="Class_LineNumber">233:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+           +----+           +---+    +---+\n\n***********************\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 234" class="Class_LineNumber">234:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Engine System Service\n\n<span class="Class_BracketsLVL1">(</span>C<span class="Class_BracketsLVL1">)</span> Open Source.\nVersion: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n\n| TERA_Ventl - Engine System Service |\n\n***********************\n"</span>,<span class="Class_BracketsLVL1">{</span>CV_Str_Version<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 235" class="Class_LineNumber">235:	|</span>	</pre></code>
 Current executing dirrectory | ['V_Path_CurExeDir']<pre><code>
-<span title="Script line: 234" class="Class_LineNumber">234:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_CurExeDir: PathBuf			= match env::current_dir<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 235" class="Class_LineNumber">235:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 236" class="Class_LineNumber">236:	|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
-<span title="Script line: 237" class="Class_LineNumber">237:	|</span>			<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 238" class="Class_LineNumber">238:	|</span>				RESULT_SUCCESS
-<span title="Script line: 239" class="Class_LineNumber">239:	|</span>			<span class="Class_BracketsLVL2">}</span>,
-<span title="Script line: 240" class="Class_LineNumber">240:	|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
+<span title="Script line: 238" class="Class_LineNumber">238:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_CurExeDir: PathBuf			= match env::current_dir<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 239" class="Class_LineNumber">239:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 240" class="Class_LineNumber">240:	|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
 <span title="Script line: 241" class="Class_LineNumber">241:	|</span>			<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 242" class="Class_LineNumber">242:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 244" class="Class_LineNumber">244:	|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
-<span title="Script line: 245" class="Class_LineNumber">245:	|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 246" class="Class_LineNumber">246:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 247" class="Class_LineNumber">247:	|</span>		<span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 248" class="Class_LineNumber">248:	|</span>	</pre></code>
+<span title="Script line: 242" class="Class_LineNumber">242:	|</span>				RESULT_SUCCESS
+<span title="Script line: 243" class="Class_LineNumber">243:	|</span>			<span class="Class_BracketsLVL2">}</span>,
+<span title="Script line: 244" class="Class_LineNumber">244:	|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
+<span title="Script line: 245" class="Class_LineNumber">245:	|</span>			<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 246" class="Class_LineNumber">246:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 248" class="Class_LineNumber">248:	|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
+<span title="Script line: 249" class="Class_LineNumber">249:	|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 250" class="Class_LineNumber">250:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 251" class="Class_LineNumber">251:	|</span>		<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 252" class="Class_LineNumber">252:	|</span>	</pre></code>
 If there's no arguments passed to program;<pre><code>
-<span title="Script line: 253" class="Class_LineNumber">253:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>					&lt <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 254" class="Class_LineNumber">254:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 255" class="Class_LineNumber">255:	|</span>	<span class="Class_CommentTagWord">		// Provice hint message</span>
-<span title="Script line: 256" class="Class_LineNumber">256:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tNo arguments give; exiting program <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n\tType \"-h\"/\"-help\" to see program options."</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 258" class="Class_LineNumber">258:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--1 - Program received no arguments--__&ltLM></span>
-<span title="Script line: 259" class="Class_LineNumber">259:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 260" class="Class_LineNumber">260:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 261" class="Class_LineNumber">261:	|</span>	</pre></code>
+<span title="Script line: 256" class="Class_LineNumber">256:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>					&lt <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 257" class="Class_LineNumber">257:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 258" class="Class_LineNumber">258:	|</span>	<span class="Class_CommentTagWord">		// Provice hint message</span>
+<span title="Script line: 259" class="Class_LineNumber">259:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tNo arguments give; exiting program <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n\tType \"-h\"/\"-help\" to see program options."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 261" class="Class_LineNumber">261:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--1 - Program received no arguments--__&ltLM></span>
+<span title="Script line: 262" class="Class_LineNumber">262:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 263" class="Class_LineNumber">263:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 264" class="Class_LineNumber">264:	|</span>	</pre></code>
 <tr><td style="text-align: right;">Shows help message via ['F_ShowHelp_RNil'] function</td><td> if first argument is "-h" or "-help"<pre><code></td></tr>
-<span title="Script line: 264" class="Class_LineNumber">264:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_String">"-h"</span> || PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_String">"-help"</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 265" class="Class_LineNumber">265:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 266" class="Class_LineNumber">266:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span> > <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 267" class="Class_LineNumber">267:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 268" class="Class_LineNumber">268:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>&PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">]</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 269" class="Class_LineNumber">269:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 270" class="Class_LineNumber">270:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
-<span title="Script line: 271" class="Class_LineNumber">271:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 272" class="Class_LineNumber">272:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span><span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 273" class="Class_LineNumber">273:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 274" class="Class_LineNumber">274:	|</span>			
-<span title="Script line: 275" class="Class_LineNumber">275:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 276" class="Class_LineNumber">276:	|</span>	</pre></code>
+<span title="Script line: 267" class="Class_LineNumber">267:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_String">"-h"</span> || PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_String">"-help"</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 268" class="Class_LineNumber">268:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 269" class="Class_LineNumber">269:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span> > <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 270" class="Class_LineNumber">270:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 271" class="Class_LineNumber">271:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>&PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">]</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 272" class="Class_LineNumber">272:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 273" class="Class_LineNumber">273:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
+<span title="Script line: 274" class="Class_LineNumber">274:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 275" class="Class_LineNumber">275:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span><span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 276" class="Class_LineNumber">276:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 277" class="Class_LineNumber">277:	|</span>			
+<span title="Script line: 278" class="Class_LineNumber">278:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 279" class="Class_LineNumber">279:	|</span>	</pre></code>
+Loops via rest of the arguments
+<pre><code><span title="Script line: 282" class="Class_LineNumber">282:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Argument <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> PAR_Arguments_StrVec</pre></code>
+<tr><td style="text-align: right;">If <i>render</i> is found as argument</td><td> launch debuging rendering window<pre><code></td></tr>
+<span title="Script line: 285" class="Class_LineNumber">285:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Argument	== <span class="Class_String">"render"</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 286" class="Class_LineNumber">286:	|</span>			<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 287" class="Class_LineNumber">287:	|</span>				main::Renderer<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 288" class="Class_LineNumber">288:	|</span>			<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 289" class="Class_LineNumber">289:	|</span>	</pre></code>
 <hr>
 <h1>Whole File - TS_System.rs</h1>
 <hr><pre><code>
 <span title="Script line: 1" class="Class_LineNumber">1:		|</span>	﻿// SET: Script Info
 <span title="Script line: 2" class="Class_LineNumber">2:		|</span>	/*&ltI>:
-<span title="Script line: 3" class="Class_LineNumber">3:		|</span>	© IVN - Iterik Viscela Nova, Matěj Zahradník, Open Source
+<span title="Script line: 3" class="Class_LineNumber">3:		|</span>	© IVN - Iterik Viscela Nova, Matěj Zahradník, © TERA_Ventl, Open Source
 <span title="Script line: 4" class="Class_LineNumber">4:		|</span>	Development Standard:	IVN_ATK-ATL_Provisions:TERA:<span class="Class_Number">7</span><span class="Class_Number">6</span><span class="Class_Number">2</span>:XR
 <span title="Script line: 5" class="Class_LineNumber">5:		|</span>	------------------------------
 <span title="Script line: 6" class="Class_LineNumber">6:		|</span>	Project leader:		-
@@ -244,282 +262,287 @@ If there's no arguments passed to program;<pre><code>
 <span title="Script line: 15" class="Class_LineNumber">15:		|</span>	
 <span title="Script line: 16" class="Class_LineNumber">16:		|</span>	<span class="Class_CommentTagWord">// Script Info !REM</span>
 <span title="Script line: 17" class="Class_LineNumber">17:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 18" class="Class_LineNumber">18:		|</span>	<span class="Class_CommentTagWord">// SET: Copliler messages</span>
+<span title="Script line: 18" class="Class_LineNumber">18:		|</span>	<span class="Class_CommentTagWord">// SET: Compliler messages</span>
 <span title="Script line: 19" class="Class_LineNumber">19:		|</span>	
-<span title="Script line: 20" class="Class_LineNumber">20:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>non_snake_<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 21" class="Class_LineNumber">21:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>non_camel_case_types<span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 22" class="Class_LineNumber">22:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>non_upper_case_globals<span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 23" class="Class_LineNumber">23:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>unused_parens<span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
-<span title="Script line: 24" class="Class_LineNumber">24:		|</span>	
-<span title="Script line: 25" class="Class_LineNumber">25:		|</span>	<span class="Class_CommentTagWord">// Copliler messages !REM</span>
-<span title="Script line: 26" class="Class_LineNumber">26:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 27" class="Class_LineNumber">27:		|</span>	<span class="Class_CommentTagWord">// SET: Package and Import statements</span>
-<span title="Script line: 28" class="Class_LineNumber">28:		|</span>	
-<span title="Script line: 29" class="Class_LineNumber">29:		|</span>	<span class="Class_CommentTagWord">//&ltS>:</span>
-<span title="Script line: 30" class="Class_LineNumber">30:		|</span>	mod main;
-<span title="Script line: 31" class="Class_LineNumber">31:		|</span>	
-<span title="Script line: 32" class="Class_LineNumber">32:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">use</span></span> <span class="Class_BracketsLVL0">{</span>std::<span class="Class_BracketsLVL1">{</span>self, env, fs::File, io::Read, ops::Add, path::<span class="Class_BracketsLVL2">{</span>Path, PathBuf<span class="Class_BracketsLVL2">}</span>, process::exit<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 33" class="Class_LineNumber">33:		|</span>	<span class="Class_CommentTagWord">//:&ltS></span>
+<span title="Script line: 20" class="Class_LineNumber">20:		|</span>	<span class="Class_CommentTagWord">//&ltI>:</span>
+<span title="Script line: 21" class="Class_LineNumber">21:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>non_snake_<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
+<span title="Script line: 22" class="Class_LineNumber">22:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>non_camel_case_types<span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
+<span title="Script line: 23" class="Class_LineNumber">23:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>non_upper_case_globals<span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
+<span title="Script line: 24" class="Class_LineNumber">24:		|</span>	#!<span class="Class_BracketsLVL0">[</span>allow<span class="Class_BracketsLVL0">(</span>unused_parens<span class="Class_BracketsLVL0">)</span><span class="Class_BracketsLVL0">]</span>
+<span title="Script line: 25" class="Class_LineNumber">25:		|</span>	<span class="Class_CommentTagWord">//:&ltI></span>
+<span title="Script line: 26" class="Class_LineNumber">26:		|</span>	
+<span title="Script line: 27" class="Class_LineNumber">27:		|</span>	<span class="Class_CommentTagWord">// Compliler messages !REM</span>
+<span title="Script line: 28" class="Class_LineNumber">28:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
+<span title="Script line: 29" class="Class_LineNumber">29:		|</span>	<span class="Class_CommentTagWord">// SET: Package and Import statements</span>
+<span title="Script line: 30" class="Class_LineNumber">30:		|</span>	
+<span title="Script line: 31" class="Class_LineNumber">31:		|</span>	<span class="Class_CommentTagWord">//&ltS>:</span>
+<span title="Script line: 32" class="Class_LineNumber">32:		|</span>	mod main;
+<span title="Script line: 33" class="Class_LineNumber">33:		|</span>	mod Modules;
 <span title="Script line: 34" class="Class_LineNumber">34:		|</span>	
-<span title="Script line: 35" class="Class_LineNumber">35:		|</span>	<span class="Class_CommentTagWord">// Package and Import statements !REM</span>
-<span title="Script line: 36" class="Class_LineNumber">36:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 37" class="Class_LineNumber">37:		|</span>	<span class="Class_CommentTagWord">// SET: ENUMs / STRUCs</span>
-<span title="Script line: 38" class="Class_LineNumber">38:		|</span>	
-<span title="Script line: 39" class="Class_LineNumber">39:		|</span>	
-<span title="Script line: 40" class="Class_LineNumber">40:		|</span>	
-<span title="Script line: 41" class="Class_LineNumber">41:		|</span>	<span class="Class_CommentTagWord">// ENUMs / STRUCs !REM</span>
-<span title="Script line: 42" class="Class_LineNumber">42:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 43" class="Class_LineNumber">43:		|</span>	<span class="Class_CommentTagWord">// SET: Program Variables</span>
-<span title="Script line: 44" class="Class_LineNumber">44:		|</span>	
-<span title="Script line: 45" class="Class_LineNumber">45:		|</span>	<span class="Class_CommentTagWord">// CLI Program version | ['CV_Str_Version']&ltLM></span>
-<span title="Script line: 46" class="Class_LineNumber">46:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">const</span></span> CV_Str_Version: &str	= <span class="Class_String">"<span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.U | <span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span><span class="Class_Number">1</span>.D"</span>;
+<span title="Script line: 35" class="Class_LineNumber">35:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">use</span></span> <span class="Class_BracketsLVL0">{</span>std::<span class="Class_BracketsLVL1">{</span>self, env, fs::File, io::Read, ops::Add, path::<span class="Class_BracketsLVL2">{</span>Path, PathBuf<span class="Class_BracketsLVL2">}</span>, process::exit<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 36" class="Class_LineNumber">36:		|</span>	<span class="Class_CommentTagWord">//:&ltS></span>
+<span title="Script line: 37" class="Class_LineNumber">37:		|</span>	
+<span title="Script line: 38" class="Class_LineNumber">38:		|</span>	<span class="Class_CommentTagWord">// Package and Import statements !REM</span>
+<span title="Script line: 39" class="Class_LineNumber">39:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
+<span title="Script line: 40" class="Class_LineNumber">40:		|</span>	<span class="Class_CommentTagWord">// SET: ENUMs / STRUCs</span>
+<span title="Script line: 41" class="Class_LineNumber">41:		|</span>	
+<span title="Script line: 42" class="Class_LineNumber">42:		|</span>	
+<span title="Script line: 43" class="Class_LineNumber">43:		|</span>	
+<span title="Script line: 44" class="Class_LineNumber">44:		|</span>	<span class="Class_CommentTagWord">// ENUMs / STRUCs !REM</span>
+<span title="Script line: 45" class="Class_LineNumber">45:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
+<span title="Script line: 46" class="Class_LineNumber">46:		|</span>	<span class="Class_CommentTagWord">// SET: Program Variables</span>
 <span title="Script line: 47" class="Class_LineNumber">47:		|</span>	
-<span title="Script line: 48" class="Class_LineNumber">48:		|</span>	<span class="Class_CommentTagWord">// Program Variables !REM</span>
-<span title="Script line: 49" class="Class_LineNumber">49:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 50" class="Class_LineNumber">50:		|</span>	<span class="Class_CommentTagWord">// SET: Trigger Functions</span>
-<span title="Script line: 51" class="Class_LineNumber">51:		|</span>	
-<span title="Script line: 52" class="Class_LineNumber">52:		|</span>	
-<span title="Script line: 53" class="Class_LineNumber">53:		|</span>	/*&ltF>:CAT: F_ShowHelp_RNil
-<span title="Script line: 54" class="Class_LineNumber">54:		|</span>		--Description--: Shows help message
-<span title="Script line: 55" class="Class_LineNumber">55:		|</span>		--Returns--: nil
-<span title="Script line: 56" class="Class_LineNumber">56:		|</span>		--Parameters--:
-<span title="Script line: 57" class="Class_LineNumber">57:		|</span>		&ltT>:	DataType,Name,Usage
-<span title="Script line: 58" class="Class_LineNumber">58:		|</span>				&str,PAR_HelpFile_Str,If empty; shows general help; otherwise show help from selected file
-<span title="Script line: 59" class="Class_LineNumber">59:		|</span>		:&ltT>:&ltF>
-<span title="Script line: 60" class="Class_LineNumber">60:		|</span>	&ltLM>*/
-<span title="Script line: 61" class="Class_LineNumber">61:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>PAR_HelpFile_Str: &<span class="Class_DataTypeWord">str</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 62" class="Class_LineNumber">62:		|</span>	<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 63" class="Class_LineNumber">63:		|</span>	<span class="Class_CommentTagWord">	// Path of this program - needed for ['V_Path_EXEDir'] | ['V_Path_EXEPath']&ltS>:</span>
-<span title="Script line: 64" class="Class_LineNumber">64:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEPath: PathBuf		= match env::current_exe<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 65" class="Class_LineNumber">65:		|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 66" class="Class_LineNumber">66:		|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
-<span title="Script line: 67" class="Class_LineNumber">67:		|</span>			<span class="Class_BracketsLVL2">{</span>	// This is a RETURN statement that REJECTS the RETURN keyword
-<span title="Script line: 68" class="Class_LineNumber">68:		|</span>				RESULT_SUCCESS
-<span title="Script line: 69" class="Class_LineNumber">69:		|</span>			<span class="Class_BracketsLVL2">}</span>,
-<span title="Script line: 70" class="Class_LineNumber">70:		|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
-<span title="Script line: 71" class="Class_LineNumber">71:		|</span>			<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 72" class="Class_LineNumber">72:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 73" class="Class_LineNumber">73:		|</span>	
-<span title="Script line: 74" class="Class_LineNumber">74:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
-<span title="Script line: 75" class="Class_LineNumber">75:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 76" class="Class_LineNumber">76:		|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 77" class="Class_LineNumber">77:		|</span>		<span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 78" class="Class_LineNumber">78:		|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 79" class="Class_LineNumber">79:		|</span>	
-<span title="Script line: 80" class="Class_LineNumber">80:		|</span>	<span class="Class_CommentTagWord">	// Directory in which this program is located - ``used to access program related files`` | ['V_Path_EXEDir']&ltS>:</span>
-<span title="Script line: 81" class="Class_LineNumber">81:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEDir: &Path		= match V_Path_EXEPath.parent<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 82" class="Class_LineNumber">82:		|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 83" class="Class_LineNumber">83:		|</span>			Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
-<span title="Script line: 84" class="Class_LineNumber">84:		|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 85" class="Class_LineNumber">85:		|</span>				RESULT_SUCCESS
-<span title="Script line: 86" class="Class_LineNumber">86:		|</span>			<span class="Class_BracketsLVL1">}</span>,
-<span title="Script line: 87" class="Class_LineNumber">87:		|</span>			None						=>
-<span title="Script line: 88" class="Class_LineNumber">88:		|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 89" class="Class_LineNumber">89:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> parent path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 90" class="Class_LineNumber">90:		|</span>	
-<span title="Script line: 91" class="Class_LineNumber">91:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
-<span title="Script line: 92" class="Class_LineNumber">92:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 93" class="Class_LineNumber">93:		|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 94" class="Class_LineNumber">94:		|</span>		<span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 95" class="Class_LineNumber">95:		|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 96" class="Class_LineNumber">96:		|</span>	
-<span title="Script line: 97" class="Class_LineNumber">97:		|</span>	<span class="Class_CommentTagWord">	// Stores relative path & name of help file | ['V_Str_FileName']</span>
-<span title="Script line: 98" class="Class_LineNumber">98:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Str_FileName: &<span class="Class_DataTypeWord"><span class="Class_DataTypeWord">str</span></span> = &<span class="Class_BracketsLVL0">(</span><span class="Class_String">"FLD_Resources/"</span>.to_<span class="Class_DataTypeWord">string</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.add<span class="Class_BracketsLVL1">(</span>&PAR_HelpFile_Str<span class="Class_BracketsLVL1">)</span>.add<span class="Class_BracketsLVL1">(</span><span class="Class_String">".IVN_Docu"</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 48" class="Class_LineNumber">48:		|</span>	<span class="Class_CommentTagWord">// CLI Program version | ['CV_Str_Version']&ltLM></span>
+<span title="Script line: 49" class="Class_LineNumber">49:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">const</span></span> CV_Str_Version: &str	= <span class="Class_String">"<span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.U | <span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span>.<span class="Class_Number">0</span><span class="Class_Number">0</span><span class="Class_Number">1</span>.D"</span>;
+<span title="Script line: 50" class="Class_LineNumber">50:		|</span>	
+<span title="Script line: 51" class="Class_LineNumber">51:		|</span>	<span class="Class_CommentTagWord">// Program Variables !REM</span>
+<span title="Script line: 52" class="Class_LineNumber">52:		|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
+<span title="Script line: 53" class="Class_LineNumber">53:		|</span>	<span class="Class_CommentTagWord">// SET: Trigger Functions</span>
+<span title="Script line: 54" class="Class_LineNumber">54:		|</span>	
+<span title="Script line: 55" class="Class_LineNumber">55:		|</span>	
+<span title="Script line: 56" class="Class_LineNumber">56:		|</span>	/*&ltF>:CAT: F_ShowHelp_RNil
+<span title="Script line: 57" class="Class_LineNumber">57:		|</span>		--Description--: Shows help message
+<span title="Script line: 58" class="Class_LineNumber">58:		|</span>		--Returns--: nil
+<span title="Script line: 59" class="Class_LineNumber">59:		|</span>		--Parameters--:
+<span title="Script line: 60" class="Class_LineNumber">60:		|</span>		&ltT>:	DataType,Name,Usage
+<span title="Script line: 61" class="Class_LineNumber">61:		|</span>				&str,PAR_HelpFile_Str,If empty; shows general help; otherwise show help from selected file
+<span title="Script line: 62" class="Class_LineNumber">62:		|</span>		:&ltT>:&ltF>
+<span title="Script line: 63" class="Class_LineNumber">63:		|</span>	&ltLM>*/
+<span title="Script line: 64" class="Class_LineNumber">64:		|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>PAR_HelpFile_Str: &<span class="Class_DataTypeWord">str</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 65" class="Class_LineNumber">65:		|</span>	<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 66" class="Class_LineNumber">66:		|</span>	<span class="Class_CommentTagWord">	// Path of this program - needed for ['V_Path_EXEDir'] | ['V_Path_EXEPath']&ltS>:</span>
+<span title="Script line: 67" class="Class_LineNumber">67:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEPath: PathBuf		= match env::current_exe<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 68" class="Class_LineNumber">68:		|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 69" class="Class_LineNumber">69:		|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
+<span title="Script line: 70" class="Class_LineNumber">70:		|</span>			<span class="Class_BracketsLVL2">{</span>	// This is a RETURN statement that REJECTS the RETURN keyword
+<span title="Script line: 71" class="Class_LineNumber">71:		|</span>				RESULT_SUCCESS
+<span title="Script line: 72" class="Class_LineNumber">72:		|</span>			<span class="Class_BracketsLVL2">}</span>,
+<span title="Script line: 73" class="Class_LineNumber">73:		|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
+<span title="Script line: 74" class="Class_LineNumber">74:		|</span>			<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 75" class="Class_LineNumber">75:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 76" class="Class_LineNumber">76:		|</span>	
+<span title="Script line: 77" class="Class_LineNumber">77:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
+<span title="Script line: 78" class="Class_LineNumber">78:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 79" class="Class_LineNumber">79:		|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 80" class="Class_LineNumber">80:		|</span>		<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 81" class="Class_LineNumber">81:		|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 82" class="Class_LineNumber">82:		|</span>	
+<span title="Script line: 83" class="Class_LineNumber">83:		|</span>	<span class="Class_CommentTagWord">	// Directory in which this program is located - ``used to access program related files`` | ['V_Path_EXEDir']&ltS>:</span>
+<span title="Script line: 84" class="Class_LineNumber">84:		|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_EXEDir: &Path		= match V_Path_EXEPath.parent<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 85" class="Class_LineNumber">85:		|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 86" class="Class_LineNumber">86:		|</span>			Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
+<span title="Script line: 87" class="Class_LineNumber">87:		|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 88" class="Class_LineNumber">88:		|</span>				RESULT_SUCCESS
+<span title="Script line: 89" class="Class_LineNumber">89:		|</span>			<span class="Class_BracketsLVL1">}</span>,
+<span title="Script line: 90" class="Class_LineNumber">90:		|</span>			None						=>
+<span title="Script line: 91" class="Class_LineNumber">91:		|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 92" class="Class_LineNumber">92:		|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> parent path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 93" class="Class_LineNumber">93:		|</span>	
+<span title="Script line: 94" class="Class_LineNumber">94:		|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
+<span title="Script line: 95" class="Class_LineNumber">95:		|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 96" class="Class_LineNumber">96:		|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 97" class="Class_LineNumber">97:		|</span>		<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 98" class="Class_LineNumber">98:		|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
 <span title="Script line: 99" class="Class_LineNumber">99:		|</span>	
-<span title="Script line: 100" class="Class_LineNumber">100:	|</span>	<span class="Class_CommentTagWord">	// Stores path to related help file | ['V_Path_FilePath']&ltLM></span>
-<span title="Script line: 101" class="Class_LineNumber">101:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_FilePath: PathBuf	= V_Path_EXEDir.jo<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL1">(</span>PAR_HelpFile_Str == <span class="Class_String">""</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program GENERAL meaning:\n"</span><span class="Class_BracketsLVL1">)</span>; <span class="Class_String">"FLD_Resources/Help.IVN_Docu"</span><span class="Class_BracketsLVL0">}</span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program SPECIFIC help: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>,PAR_HelpFile_Str<span class="Class_BracketsLVL1">)</span>; V_Str_FileName<span class="Class_BracketsLVL0">}</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 100" class="Class_LineNumber">100:	|</span>	<span class="Class_CommentTagWord">	// Stores relative path & name of help file | ['V_Str_FileName']</span>
+<span title="Script line: 101" class="Class_LineNumber">101:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Str_FileName: &<span class="Class_DataTypeWord"><span class="Class_DataTypeWord">str</span></span> = &<span class="Class_BracketsLVL0">(</span><span class="Class_String">"FLD_Resources/"</span>.to_<span class="Class_DataTypeWord">string</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.add<span class="Class_BracketsLVL1">(</span>&PAR_HelpFile_Str<span class="Class_BracketsLVL1">)</span>.add<span class="Class_BracketsLVL1">(</span><span class="Class_String">".IVN_Docu"</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
 <span title="Script line: 102" class="Class_LineNumber">102:	|</span>	
-<span title="Script line: 103" class="Class_LineNumber">103:	|</span>	
-<span title="Script line: 104" class="Class_LineNumber">104:	|</span>	<span class="Class_CommentTagWord">	// Checks if file exists&ltS>:</span>
-<span title="Script line: 105" class="Class_LineNumber">105:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>Path::exists<span class="Class_BracketsLVL1">(</span>V_Path_FilePath.as_path<span class="Class_BracketsLVL2">(</span><span class="Class_BracketsLVL2">)</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">false</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 106" class="Class_LineNumber">106:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 107" class="Class_LineNumber">107:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tHelp file failed to load/not present. <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n<span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>, V_Path_EXEPath.as_path<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.to_string_lossy<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 108" class="Class_LineNumber">108:	|</span>	
-<span title="Script line: 109" class="Class_LineNumber">109:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--21 - Help file failed to load/not present--__&ltLM></span>
-<span title="Script line: 110" class="Class_LineNumber">110:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 111" class="Class_LineNumber">111:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 113" class="Class_LineNumber">113:	|</span>	
-<span title="Script line: 114" class="Class_LineNumber">114:	|</span>	<span class="Class_CommentTagWord">	// Attempts to obain file containing Exit Codes | ['V_File_ExitCodes']&ltLM></span>
-<span title="Script line: 115" class="Class_LineNumber">115:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_File_ExitCodes: File	= File::open<span class="Class_BracketsLVL0">(</span>V_Path_FilePath<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"!ALERT! File obtain/read failed"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 103" class="Class_LineNumber">103:	|</span>	<span class="Class_CommentTagWord">	// Stores path to related help file | ['V_Path_FilePath']&ltLM></span>
+<span title="Script line: 104" class="Class_LineNumber">104:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_FilePath: PathBuf	= V_Path_EXEDir.jo<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL1">(</span>PAR_HelpFile_Str == <span class="Class_String">""</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program GENERAL meaning:\n"</span><span class="Class_BracketsLVL1">)</span>; <span class="Class_String">"FLD_Resources/Help.IVN_Docu"</span><span class="Class_BracketsLVL0">}</span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_BracketsLVL0">{</span>println!<span class="Class_BracketsLVL1">(</span><span class="Class_String">"Program SPECIFIC help: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>,PAR_HelpFile_Str<span class="Class_BracketsLVL1">)</span>; V_Str_FileName<span class="Class_BracketsLVL0">}</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 105" class="Class_LineNumber">105:	|</span>	
+<span title="Script line: 106" class="Class_LineNumber">106:	|</span>	
+<span title="Script line: 107" class="Class_LineNumber">107:	|</span>	<span class="Class_CommentTagWord">	// Checks if file exists&ltS>:</span>
+<span title="Script line: 108" class="Class_LineNumber">108:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>Path::exists<span class="Class_BracketsLVL1">(</span>V_Path_FilePath.as_path<span class="Class_BracketsLVL2">(</span><span class="Class_BracketsLVL2">)</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">false</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 109" class="Class_LineNumber">109:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 110" class="Class_LineNumber">110:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tHelp file failed to load/not present. <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n<span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n"</span>, V_Path_EXEPath.as_path<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.to_string_lossy<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 111" class="Class_LineNumber">111:	|</span>	
+<span title="Script line: 112" class="Class_LineNumber">112:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--21 - Help file failed to load/not present--__&ltLM></span>
+<span title="Script line: 113" class="Class_LineNumber">113:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 114" class="Class_LineNumber">114:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 115" class="Class_LineNumber">115:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
 <span title="Script line: 116" class="Class_LineNumber">116:	|</span>	
-<span title="Script line: 117" class="Class_LineNumber">117:	|</span>	<span class="Class_CommentTagWord">	// A string to which will be stored contents of ExitCodes files | ['V_Str_ReadData']&ltLM></span>
-<span title="Script line: 118" class="Class_LineNumber">118:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData: String	= String::<span class="Class_LogicKeyWord">new</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 119" class="Class_LineNumber">119:	|</span>	<span class="Class_CommentTagWord">	// Used as a filtering for ExitCodes file to not show anything outside table of this file | ['V_Bool_IsInCodes']&ltLM></span>
-<span title="Script line: 120" class="Class_LineNumber">120:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Bool_IsInCodes: bool	= false;
-<span title="Script line: 121" class="Class_LineNumber">121:	|</span>	
-<span title="Script line: 122" class="Class_LineNumber">122:	|</span>	<span class="Class_CommentTagWord">	// Reads ExitCodes file and stores its content as string into ['V_Str_ReadData']&ltLM></span>
-<span title="Script line: 123" class="Class_LineNumber">123:	|</span>		V_File_ExitCodes.read_to_<span class="Class_DataTypeWord">string</span><span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"msg"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 117" class="Class_LineNumber">117:	|</span>	<span class="Class_CommentTagWord">	// Attempts to obain file containing Exit Codes | ['V_File_ExitCodes']&ltLM></span>
+<span title="Script line: 118" class="Class_LineNumber">118:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_File_ExitCodes: File	= File::open<span class="Class_BracketsLVL0">(</span>V_Path_FilePath<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"!ALERT! File obtain/read failed"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 119" class="Class_LineNumber">119:	|</span>	
+<span title="Script line: 120" class="Class_LineNumber">120:	|</span>	<span class="Class_CommentTagWord">	// A string to which will be stored contents of ExitCodes files | ['V_Str_ReadData']&ltLM></span>
+<span title="Script line: 121" class="Class_LineNumber">121:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData: String	= String::<span class="Class_LogicKeyWord">new</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 122" class="Class_LineNumber">122:	|</span>	<span class="Class_CommentTagWord">	// Used as a filtering for ExitCodes file to not show anything outside table of this file | ['V_Bool_IsInCodes']&ltLM></span>
+<span title="Script line: 123" class="Class_LineNumber">123:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Bool_IsInCodes: bool	= false;
 <span title="Script line: 124" class="Class_LineNumber">124:	|</span>	
-<span title="Script line: 125" class="Class_LineNumber">125:	|</span>	
-<span title="Script line: 126" class="Class_LineNumber">126:	|</span>	<span class="Class_CommentTagWord">	// For each line of ExitCodes file contents,&ltS>:</span>
-<span title="Script line: 127" class="Class_LineNumber">127:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Str <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> V_Str_ReadData.split<span class="Class_BracketsLVL0">(</span>'\n'<span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 128" class="Class_LineNumber">128:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh end tag, cease printing ['I_Str']</span>
-<span title="Script line: 130" class="Class_LineNumber">130:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">":&ltT>:&ltF>"</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 131" class="Class_LineNumber">131:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 132" class="Class_LineNumber">132:	|</span>				V_Bool_IsInCodes				= false;
-<span title="Script line: 133" class="Class_LineNumber">133:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"-------------------------------------\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 134" class="Class_LineNumber">134:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 135" class="Class_LineNumber">135:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh start tag, start printing ['I_Str']</span>
-<span title="Script line: 136" class="Class_LineNumber">136:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">"&ltF>:&ltT>:"</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 137" class="Class_LineNumber">137:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 138" class="Class_LineNumber">138:	|</span>				V_Bool_IsInCodes				= true;
-<span title="Script line: 139" class="Class_LineNumber">139:	|</span>	
-<span title="Script line: 140" class="Class_LineNumber">140:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Str_EditedStr: String		= I_Str.replace<span class="Class_BracketsLVL0">(</span><span class="Class_String">"&ltF>:&ltT>:"</span>, <span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 141" class="Class_LineNumber">141:	|</span>	
-<span title="Script line: 142" class="Class_LineNumber">142:	|</span>	<span class="Class_CommentTagWord">			// Stored fist element of help file line | ['V_StrSplit_']&ltS>:</span>
-<span title="Script line: 143" class="Class_LineNumber">143:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match V_Str_EditedStr.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 144" class="Class_LineNumber">144:	|</span>				<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 145" class="Class_LineNumber">145:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
-<span title="Script line: 146" class="Class_LineNumber">146:	|</span>					<span class="Class_BracketsLVL3">{</span>
-<span title="Script line: 147" class="Class_LineNumber">147:	|</span>						RESULT_SUCCESS
-<span title="Script line: 148" class="Class_LineNumber">148:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 149" class="Class_LineNumber">149:	|</span>					None						=>
-<span title="Script line: 150" class="Class_LineNumber">150:	|</span>					<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 151" class="Class_LineNumber">151:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
-<span title="Script line: 152" class="Class_LineNumber">152:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 153" class="Class_LineNumber">153:	|</span>				<span class="Class_BracketsLVL1">}</span>;
-<span title="Script line: 154" class="Class_LineNumber">154:	|</span>	<span class="Class_CommentTagWord">			//:&ltS></span>
-<span title="Script line: 155" class="Class_LineNumber">155:	|</span>	
-<span title="Script line: 156" class="Class_LineNumber">156:	|</span>				<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>V_StrSplit_.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>			> <span class="Class_Number">7</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 157" class="Class_LineNumber">157:	|</span>				<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 158" class="Class_LineNumber">158:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, V_Str_EditedStr.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 159" class="Class_LineNumber">159:	|</span>				<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 160" class="Class_LineNumber">160:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
-<span title="Script line: 161" class="Class_LineNumber">161:	|</span>				<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 162" class="Class_LineNumber">162:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, V_Str_EditedStr.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 163" class="Class_LineNumber">163:	|</span>				<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 164" class="Class_LineNumber">164:	|</span>	
-<span title="Script line: 165" class="Class_LineNumber">165:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"-------------------------------------"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 166" class="Class_LineNumber">166:	|</span>			<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 167" class="Class_LineNumber">167:	|</span>	<span class="Class_CommentTagWord">		// If ['V_Bool_IsInCodes'] is --true--, print ['I_Str']</span>
-<span title="Script line: 168" class="Class_LineNumber">168:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>V_Bool_IsInCodes			== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 169" class="Class_LineNumber">169:	|</span>			<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 170" class="Class_LineNumber">170:	|</span>	<span class="Class_CommentTagWord">			// Stored fist element of help file line | ['V_StrSplit_']&ltS>:</span>
-<span title="Script line: 171" class="Class_LineNumber">171:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match I_Str.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 172" class="Class_LineNumber">172:	|</span>				<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 173" class="Class_LineNumber">173:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>	=>
-<span title="Script line: 174" class="Class_LineNumber">174:	|</span>					<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 175" class="Class_LineNumber">175:	|</span>						RESULT_SUCCESS
-<span title="Script line: 176" class="Class_LineNumber">176:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 177" class="Class_LineNumber">177:	|</span>					None						=>
-<span title="Script line: 178" class="Class_LineNumber">178:	|</span>					<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 179" class="Class_LineNumber">179:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
-<span title="Script line: 180" class="Class_LineNumber">180:	|</span>					<span class="Class_BracketsLVL2">}</span>
-<span title="Script line: 181" class="Class_LineNumber">181:	|</span>				<span class="Class_BracketsLVL1">}</span>;
-<span title="Script line: 182" class="Class_LineNumber">182:	|</span>	<span class="Class_CommentTagWord">			//:&ltS></span>
-<span title="Script line: 183" class="Class_LineNumber">183:	|</span>	
-<span title="Script line: 184" class="Class_LineNumber">184:	|</span>				<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>V_StrSplit_.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>			> <span class="Class_Number">7</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 185" class="Class_LineNumber">185:	|</span>				<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 186" class="Class_LineNumber">186:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, I_Str.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 187" class="Class_LineNumber">187:	|</span>				<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 188" class="Class_LineNumber">188:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
-<span title="Script line: 189" class="Class_LineNumber">189:	|</span>				<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 190" class="Class_LineNumber">190:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, I_Str.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 191" class="Class_LineNumber">191:	|</span>				<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 192" class="Class_LineNumber">192:	|</span>	
-<span title="Script line: 193" class="Class_LineNumber">193:	|</span>			<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 194" class="Class_LineNumber">194:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 195" class="Class_LineNumber">195:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 196" class="Class_LineNumber">196:	|</span>	
-<span title="Script line: 197" class="Class_LineNumber">197:	|</span>		println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tProgram showed help message. <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_BracketsLVL0">]</span>\n***********************\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 198" class="Class_LineNumber">198:	|</span>	
-<span title="Script line: 199" class="Class_LineNumber">199:	|</span>	<span class="Class_CommentTagWord">	// Program EXIT - __--2 - Program showed help message--__&ltLM></span>
-<span title="Script line: 200" class="Class_LineNumber">200:	|</span>		exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 201" class="Class_LineNumber">201:	|</span>	<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 202" class="Class_LineNumber">202:	|</span>	<span class="Class_CommentTagWord">//---</span>
-<span title="Script line: 203" class="Class_LineNumber">203:	|</span>	
-<span title="Script line: 204" class="Class_LineNumber">204:	|</span>	
-<span title="Script line: 205" class="Class_LineNumber">205:	|</span>	<span class="Class_CommentTagWord">// Trigger Functions !REM</span>
-<span title="Script line: 206" class="Class_LineNumber">206:	|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
-<span title="Script line: 207" class="Class_LineNumber">207:	|</span>	<span class="Class_CommentTagWord">// SET: AUTORUN Functions</span>
-<span title="Script line: 208" class="Class_LineNumber">208:	|</span>	
-<span title="Script line: 209" class="Class_LineNumber">209:	|</span>	/*&ltF>:CAT:ma<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span>
-<span title="Script line: 210" class="Class_LineNumber">210:	|</span>		--Description--: Program ENTRY; handles inputted arguments
-<span title="Script line: 211" class="Class_LineNumber">211:	|</span>		--Returns--:nil
-<span title="Script line: 212" class="Class_LineNumber">212:	|</span>		--Parameters--: nil
-<span title="Script line: 213" class="Class_LineNumber">213:	|</span>	*/
-<span title="Script line: 214" class="Class_LineNumber">214:	|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ma<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 215" class="Class_LineNumber">215:	|</span>	<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 216" class="Class_LineNumber">216:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> PAR_Arguments_StrVec: Vec&ltString>	= env::args<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>.collect<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 217" class="Class_LineNumber">217:	|</span>	
-<span title="Script line: 218" class="Class_LineNumber">218:	|</span>	
-<span title="Script line: 219" class="Class_LineNumber">219:	|</span>	<span class="Class_CommentTagWord">	// Introduction message &ltS>:</span>
-<span title="Script line: 220" class="Class_LineNumber">220:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+  +---+              +---+  +---+    +---+\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 221" class="Class_LineNumber">221:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |   \\   \\            /   /   |   |\\   |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 222" class="Class_LineNumber">222:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |    \\   \\          /   /    |   | \\  |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 223" class="Class_LineNumber">223:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |     \\   \\        /   /     |   |  \\ |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 224" class="Class_LineNumber">224:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |      \\   \\      /   /      |   |   \\|   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 225" class="Class_LineNumber">225:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |       \\   \\    /   /       |   |\\   \\   |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 226" class="Class_LineNumber">226:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |        \\   \\  /   /        |   | \\   \\  |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 227" class="Class_LineNumber">227:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |         \\   \\/   /         |   |  \\   \\ |\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 228" class="Class_LineNumber">228:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |          \\      /          |   |   \\   \\|\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 229" class="Class_LineNumber">229:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+           +----+           +---+    +---+\n\n***********************\n"</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 230" class="Class_LineNumber">230:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Engine System Service\n\n<span class="Class_BracketsLVL1">(</span>C<span class="Class_BracketsLVL1">)</span> Open Source.\nVersion: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n\n| TERA_Ventl - Engine System Service |\n\n***********************\n"</span>,<span class="Class_BracketsLVL1">{</span>CV_Str_Version<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 231" class="Class_LineNumber">231:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 232" class="Class_LineNumber">232:	|</span>	
-<span title="Script line: 233" class="Class_LineNumber">233:	|</span>	<span class="Class_CommentTagWord">	// Current executing dirrectory | ['V_Path_CurExeDir']&ltS>:</span>
-<span title="Script line: 234" class="Class_LineNumber">234:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_CurExeDir: PathBuf			= match env::current_dir<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 235" class="Class_LineNumber">235:	|</span>		<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 236" class="Class_LineNumber">236:	|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
-<span title="Script line: 237" class="Class_LineNumber">237:	|</span>			<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 238" class="Class_LineNumber">238:	|</span>				RESULT_SUCCESS
-<span title="Script line: 239" class="Class_LineNumber">239:	|</span>			<span class="Class_BracketsLVL2">}</span>,
-<span title="Script line: 240" class="Class_LineNumber">240:	|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
+<span title="Script line: 125" class="Class_LineNumber">125:	|</span>	<span class="Class_CommentTagWord">	// Reads ExitCodes file and stores its content as string into ['V_Str_ReadData']&ltLM></span>
+<span title="Script line: 126" class="Class_LineNumber">126:	|</span>		V_File_ExitCodes.read_to_<span class="Class_DataTypeWord">string</span><span class="Class_BracketsLVL0">(</span>&<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">mut</span></span> V_Str_ReadData<span class="Class_BracketsLVL0">)</span>.expect<span class="Class_BracketsLVL0">(</span><span class="Class_String">"msg"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 127" class="Class_LineNumber">127:	|</span>	
+<span title="Script line: 128" class="Class_LineNumber">128:	|</span>	
+<span title="Script line: 129" class="Class_LineNumber">129:	|</span>	<span class="Class_CommentTagWord">	// For each line of ExitCodes file contents,&ltS>:</span>
+<span title="Script line: 130" class="Class_LineNumber">130:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Str <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> V_Str_ReadData.split<span class="Class_BracketsLVL0">(</span>'\n'<span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 131" class="Class_LineNumber">131:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 132" class="Class_LineNumber">132:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh end tag, cease printing ['I_Str']</span>
+<span title="Script line: 133" class="Class_LineNumber">133:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">":&ltT>:&ltF>"</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 134" class="Class_LineNumber">134:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 135" class="Class_LineNumber">135:	|</span>				V_Bool_IsInCodes				= false;
+<span title="Script line: 136" class="Class_LineNumber">136:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"-------------------------------------\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 137" class="Class_LineNumber">137:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 138" class="Class_LineNumber">138:	|</span>	<span class="Class_CommentTagWord">		// If line contains table & highligh start tag, start printing ['I_Str']</span>
+<span title="Script line: 139" class="Class_LineNumber">139:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Str.contains<span class="Class_BracketsLVL1">(</span><span class="Class_String">"&ltF>:&ltT>:"</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 140" class="Class_LineNumber">140:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 141" class="Class_LineNumber">141:	|</span>				V_Bool_IsInCodes				= true;
+<span title="Script line: 142" class="Class_LineNumber">142:	|</span>	
+<span title="Script line: 143" class="Class_LineNumber">143:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Str_EditedStr: String		= I_Str.replace<span class="Class_BracketsLVL0">(</span><span class="Class_String">"&ltF>:&ltT>:"</span>, <span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 144" class="Class_LineNumber">144:	|</span>	
+<span title="Script line: 145" class="Class_LineNumber">145:	|</span>	<span class="Class_CommentTagWord">			// Stored fist element of help file line | ['V_StrSplit_']&ltS>:</span>
+<span title="Script line: 146" class="Class_LineNumber">146:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match V_Str_EditedStr.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 147" class="Class_LineNumber">147:	|</span>				<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 148" class="Class_LineNumber">148:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>		=>
+<span title="Script line: 149" class="Class_LineNumber">149:	|</span>					<span class="Class_BracketsLVL3">{</span>
+<span title="Script line: 150" class="Class_LineNumber">150:	|</span>						RESULT_SUCCESS
+<span title="Script line: 151" class="Class_LineNumber">151:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 152" class="Class_LineNumber">152:	|</span>					None						=>
+<span title="Script line: 153" class="Class_LineNumber">153:	|</span>					<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 154" class="Class_LineNumber">154:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
+<span title="Script line: 155" class="Class_LineNumber">155:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 156" class="Class_LineNumber">156:	|</span>				<span class="Class_BracketsLVL1">}</span>;
+<span title="Script line: 157" class="Class_LineNumber">157:	|</span>	<span class="Class_CommentTagWord">			//:&ltS></span>
+<span title="Script line: 158" class="Class_LineNumber">158:	|</span>	
+<span title="Script line: 159" class="Class_LineNumber">159:	|</span>				<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>V_StrSplit_.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>			> <span class="Class_Number">7</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 160" class="Class_LineNumber">160:	|</span>				<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 161" class="Class_LineNumber">161:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, V_Str_EditedStr.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 162" class="Class_LineNumber">162:	|</span>				<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 163" class="Class_LineNumber">163:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
+<span title="Script line: 164" class="Class_LineNumber">164:	|</span>				<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 165" class="Class_LineNumber">165:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, V_Str_EditedStr.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 166" class="Class_LineNumber">166:	|</span>				<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 167" class="Class_LineNumber">167:	|</span>	
+<span title="Script line: 168" class="Class_LineNumber">168:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"-------------------------------------"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 169" class="Class_LineNumber">169:	|</span>			<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 170" class="Class_LineNumber">170:	|</span>	<span class="Class_CommentTagWord">		// If ['V_Bool_IsInCodes'] is --true--, print ['I_Str']</span>
+<span title="Script line: 171" class="Class_LineNumber">171:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span> <span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>V_Bool_IsInCodes			== <span class="Class_LogicKeyWord">true</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 172" class="Class_LineNumber">172:	|</span>			<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 173" class="Class_LineNumber">173:	|</span>	<span class="Class_CommentTagWord">			// Stored fist element of help file line | ['V_StrSplit_']&ltS>:</span>
+<span title="Script line: 174" class="Class_LineNumber">174:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_StrSplit_: &str			= match I_Str.split<span class="Class_BracketsLVL0">(</span><span class="Class_String">","</span><span class="Class_BracketsLVL0">)</span>.nth<span class="Class_BracketsLVL0">(</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 175" class="Class_LineNumber">175:	|</span>				<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 176" class="Class_LineNumber">176:	|</span>					Some<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>	=>
+<span title="Script line: 177" class="Class_LineNumber">177:	|</span>					<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 178" class="Class_LineNumber">178:	|</span>						RESULT_SUCCESS
+<span title="Script line: 179" class="Class_LineNumber">179:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 180" class="Class_LineNumber">180:	|</span>					None						=>
+<span title="Script line: 181" class="Class_LineNumber">181:	|</span>					<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 182" class="Class_LineNumber">182:	|</span>						<span class="Class_String">"&lt:ISSUE:>: WITH READING/SPLITTING"</span>
+<span title="Script line: 183" class="Class_LineNumber">183:	|</span>					<span class="Class_BracketsLVL2">}</span>
+<span title="Script line: 184" class="Class_LineNumber">184:	|</span>				<span class="Class_BracketsLVL1">}</span>;
+<span title="Script line: 185" class="Class_LineNumber">185:	|</span>	<span class="Class_CommentTagWord">			//:&ltS></span>
+<span title="Script line: 186" class="Class_LineNumber">186:	|</span>	
+<span title="Script line: 187" class="Class_LineNumber">187:	|</span>				<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>V_StrSplit_.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>			> <span class="Class_Number">7</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 188" class="Class_LineNumber">188:	|</span>				<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 189" class="Class_LineNumber">189:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, I_Str.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 190" class="Class_LineNumber">190:	|</span>				<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 191" class="Class_LineNumber">191:	|</span>				<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
+<span title="Script line: 192" class="Class_LineNumber">192:	|</span>				<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 193" class="Class_LineNumber">193:	|</span>					println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL2">{</span><span class="Class_BracketsLVL2">}</span>"</span>, I_Str.replace<span class="Class_BracketsLVL1">(</span><span class="Class_String">","</span>, <span class="Class_String">"\t\t| "</span><span class="Class_BracketsLVL1">)</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 194" class="Class_LineNumber">194:	|</span>				<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 195" class="Class_LineNumber">195:	|</span>	
+<span title="Script line: 196" class="Class_LineNumber">196:	|</span>			<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 197" class="Class_LineNumber">197:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 198" class="Class_LineNumber">198:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 199" class="Class_LineNumber">199:	|</span>	
+<span title="Script line: 200" class="Class_LineNumber">200:	|</span>		println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tProgram showed help message. <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_BracketsLVL0">]</span>\n***********************\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 201" class="Class_LineNumber">201:	|</span>	
+<span title="Script line: 202" class="Class_LineNumber">202:	|</span>	<span class="Class_CommentTagWord">	// Program EXIT - __--2 - Program showed help message--__&ltLM></span>
+<span title="Script line: 203" class="Class_LineNumber">203:	|</span>		exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 204" class="Class_LineNumber">204:	|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 205" class="Class_LineNumber">205:	|</span>	<span class="Class_CommentTagWord">//---</span>
+<span title="Script line: 206" class="Class_LineNumber">206:	|</span>	
+<span title="Script line: 207" class="Class_LineNumber">207:	|</span>	
+<span title="Script line: 208" class="Class_LineNumber">208:	|</span>	<span class="Class_CommentTagWord">// Trigger Functions !REM</span>
+<span title="Script line: 209" class="Class_LineNumber">209:	|</span>	<span class="Class_CommentTagWord">//----------------------------</span>
+<span title="Script line: 210" class="Class_LineNumber">210:	|</span>	<span class="Class_CommentTagWord">// SET: AUTORUN Functions</span>
+<span title="Script line: 211" class="Class_LineNumber">211:	|</span>	
+<span title="Script line: 212" class="Class_LineNumber">212:	|</span>	/*&ltF>:CAT:ma<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span>
+<span title="Script line: 213" class="Class_LineNumber">213:	|</span>		--Description--: Program ENTRY; handles inputted arguments
+<span title="Script line: 214" class="Class_LineNumber">214:	|</span>		--Returns--:nil
+<span title="Script line: 215" class="Class_LineNumber">215:	|</span>		--Parameters--: nil
+<span title="Script line: 216" class="Class_LineNumber">216:	|</span>	:&ltF>*/
+<span title="Script line: 217" class="Class_LineNumber">217:	|</span>	<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">fn</span></span> ma<span class="Class_LogicKeyWord">in</span><span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 218" class="Class_LineNumber">218:	|</span>	<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 219" class="Class_LineNumber">219:	|</span>	<span class="Class_CommentTagWord">	// Stores arguments passed in | ['PAR_Arguments_StrVec']&ltLM></span>
+<span title="Script line: 220" class="Class_LineNumber">220:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> PAR_Arguments_StrVec: Vec&ltString>	= env::args<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>.collect<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 221" class="Class_LineNumber">221:	|</span>	
+<span title="Script line: 222" class="Class_LineNumber">222:	|</span>	
+<span title="Script line: 223" class="Class_LineNumber">223:	|</span>	<span class="Class_CommentTagWord">	// Introduction message &ltS>:</span>
+<span title="Script line: 224" class="Class_LineNumber">224:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+  +---+              +---+  +---+    +---+\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 225" class="Class_LineNumber">225:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |   \\   \\            /   /   |   |\\   |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 226" class="Class_LineNumber">226:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |    \\   \\          /   /    |   | \\  |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 227" class="Class_LineNumber">227:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |     \\   \\        /   /     |   |  \\ |   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 228" class="Class_LineNumber">228:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |      \\   \\      /   /      |   |   \\|   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 229" class="Class_LineNumber">229:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |       \\   \\    /   /       |   |\\   \\   |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 230" class="Class_LineNumber">230:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |        \\   \\  /   /        |   | \\   \\  |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 231" class="Class_LineNumber">231:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |         \\   \\/   /         |   |  \\   \\ |\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 232" class="Class_LineNumber">232:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"|   |          \\      /          |   |   \\   \\|\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 233" class="Class_LineNumber">233:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"+---+           +----+           +---+    +---+\n\n***********************\n"</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 234" class="Class_LineNumber">234:	|</span>		print!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"Engine System Service\n\n<span class="Class_BracketsLVL1">(</span>C<span class="Class_BracketsLVL1">)</span> Open Source.\nVersion: <span class="Class_BracketsLVL1">{</span><span class="Class_BracketsLVL1">}</span>\n\n| TERA_Ventl - Engine System Service |\n\n***********************\n"</span>,<span class="Class_BracketsLVL1">{</span>CV_Str_Version<span class="Class_BracketsLVL1">}</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 235" class="Class_LineNumber">235:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 236" class="Class_LineNumber">236:	|</span>	
+<span title="Script line: 237" class="Class_LineNumber">237:	|</span>	<span class="Class_CommentTagWord">	// Current executing dirrectory | ['V_Path_CurExeDir']&ltS>:</span>
+<span title="Script line: 238" class="Class_LineNumber">238:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">let</span></span> V_Path_CurExeDir: PathBuf			= match env::current_dir<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 239" class="Class_LineNumber">239:	|</span>		<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 240" class="Class_LineNumber">240:	|</span>			Ok<span class="Class_BracketsLVL0">(</span>RESULT_SUCCESS<span class="Class_BracketsLVL0">)</span>			=> 
 <span title="Script line: 241" class="Class_LineNumber">241:	|</span>			<span class="Class_BracketsLVL2">{</span>
-<span title="Script line: 242" class="Class_LineNumber">242:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 243" class="Class_LineNumber">243:	|</span>	
-<span title="Script line: 244" class="Class_LineNumber">244:	|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
-<span title="Script line: 245" class="Class_LineNumber">245:	|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 246" class="Class_LineNumber">246:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 247" class="Class_LineNumber">247:	|</span>		<span class="Class_BracketsLVL0">}</span>;
-<span title="Script line: 248" class="Class_LineNumber">248:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 249" class="Class_LineNumber">249:	|</span>		println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tCurrent dirrectory: <span class="Class_BracketsLVL0">{</span><span class="Class_BracketsLVL0">}</span>\n\tCurrent operating system: <span class="Class_BracketsLVL0">{</span><span class="Class_BracketsLVL0">}</span>\n\n"</span>, V_Path_CurExeDir.to_<span class="Class_DataTypeWord">str</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.expect<span class="Class_BracketsLVL1">(</span><span class="Class_String">"<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>\tFail with CurExeDir"</span><span class="Class_BracketsLVL1">)</span>, env::consts::OS<span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 250" class="Class_LineNumber">250:	|</span>	
-<span title="Script line: 251" class="Class_LineNumber">251:	|</span>	
-<span title="Script line: 252" class="Class_LineNumber">252:	|</span>	<span class="Class_CommentTagWord">	// If there's no arguments passed to program;&ltS>:</span>
-<span title="Script line: 253" class="Class_LineNumber">253:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>					&lt <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 254" class="Class_LineNumber">254:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 255" class="Class_LineNumber">255:	|</span>	<span class="Class_CommentTagWord">		// Provice hint message</span>
-<span title="Script line: 256" class="Class_LineNumber">256:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tNo arguments give; exiting program <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n\tType \"-h\"/\"-help\" to see program options."</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 257" class="Class_LineNumber">257:	|</span>	
-<span title="Script line: 258" class="Class_LineNumber">258:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--1 - Program received no arguments--__&ltLM></span>
-<span title="Script line: 259" class="Class_LineNumber">259:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 260" class="Class_LineNumber">260:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 261" class="Class_LineNumber">261:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 262" class="Class_LineNumber">262:	|</span>	
-<span title="Script line: 263" class="Class_LineNumber">263:	|</span>	<span class="Class_CommentTagWord">	// Shows help message via ['F_ShowHelp_RNil'] function, if first argument is "-h" or "-help"&ltS>:</span>
-<span title="Script line: 264" class="Class_LineNumber">264:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_String">"-h"</span> || PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_String">"-help"</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 265" class="Class_LineNumber">265:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 266" class="Class_LineNumber">266:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span> > <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 267" class="Class_LineNumber">267:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 268" class="Class_LineNumber">268:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>&PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">]</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 269" class="Class_LineNumber">269:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 270" class="Class_LineNumber">270:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
-<span title="Script line: 271" class="Class_LineNumber">271:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 272" class="Class_LineNumber">272:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span><span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 273" class="Class_LineNumber">273:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 274" class="Class_LineNumber">274:	|</span>			
-<span title="Script line: 275" class="Class_LineNumber">275:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 276" class="Class_LineNumber">276:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
-<span title="Script line: 277" class="Class_LineNumber">277:	|</span>	
-<span title="Script line: 278" class="Class_LineNumber">278:	|</span>	<span class="Class_CommentTagWord">	//</span>
-<span title="Script line: 279" class="Class_LineNumber">279:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Argument <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> PAR_Arguments_StrVec
-<span title="Script line: 280" class="Class_LineNumber">280:	|</span>		<span class="Class_BracketsLVL0">{</span>
-<span title="Script line: 281" class="Class_LineNumber">281:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Argument	== <span class="Class_String">"render"</span><span class="Class_BracketsLVL0">)</span>
-<span title="Script line: 282" class="Class_LineNumber">282:	|</span>			<span class="Class_BracketsLVL1">{</span>
-<span title="Script line: 283" class="Class_LineNumber">283:	|</span>				main::Renderer<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
-<span title="Script line: 284" class="Class_LineNumber">284:	|</span>			<span class="Class_BracketsLVL1">}</span>
-<span title="Script line: 285" class="Class_LineNumber">285:	|</span>		<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 286" class="Class_LineNumber">286:	|</span>	<span class="Class_BracketsLVL0">}</span>
-<span title="Script line: 287" class="Class_LineNumber">287:	|</span>	<span class="Class_CommentTagWord">//---</span>
+<span title="Script line: 242" class="Class_LineNumber">242:	|</span>				RESULT_SUCCESS
+<span title="Script line: 243" class="Class_LineNumber">243:	|</span>			<span class="Class_BracketsLVL2">}</span>,
+<span title="Script line: 244" class="Class_LineNumber">244:	|</span>			Err<span class="Class_BracketsLVL0">(</span>RESULT_ERROR<span class="Class_BracketsLVL0">)</span>			=>
+<span title="Script line: 245" class="Class_LineNumber">245:	|</span>			<span class="Class_BracketsLVL2">{</span>
+<span title="Script line: 246" class="Class_LineNumber">246:	|</span>				println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>:\tFailed to obta<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> program path! <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">]</span>\n\t<span class="Class_BracketsLVL3">{</span><span class="Class_BracketsLVL2">}</span>"</span>,RESULT_ERROR<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 247" class="Class_LineNumber">247:	|</span>	
+<span title="Script line: 248" class="Class_LineNumber">248:	|</span>	<span class="Class_CommentTagWord">			// Program EXIT - __--20 - Failed to obtain program path / get parent path--__&ltLM></span>
+<span title="Script line: 249" class="Class_LineNumber">249:	|</span>				exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">2</span><span class="Class_Number">0</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 250" class="Class_LineNumber">250:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 251" class="Class_LineNumber">251:	|</span>		<span class="Class_BracketsLVL0">}</span>;
+<span title="Script line: 252" class="Class_LineNumber">252:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 253" class="Class_LineNumber">253:	|</span>		println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tCurrent dirrectory: <span class="Class_BracketsLVL0">{</span><span class="Class_BracketsLVL0">}</span>\n\tCurrent operating system: <span class="Class_BracketsLVL0">{</span><span class="Class_BracketsLVL0">}</span>\n\n"</span>, V_Path_CurExeDir.to_<span class="Class_DataTypeWord">str</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>.expect<span class="Class_BracketsLVL1">(</span><span class="Class_String">"<span class="Class_BracketsLVL0">[</span>ERROR<span class="Class_BracketsLVL0">]</span>\tFail with CurExeDir"</span><span class="Class_BracketsLVL1">)</span>, env::consts::OS<span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 254" class="Class_LineNumber">254:	|</span>	
+<span title="Script line: 255" class="Class_LineNumber">255:	|</span>	<span class="Class_CommentTagWord">	// If there's no arguments passed to program;&ltS>:</span>
+<span title="Script line: 256" class="Class_LineNumber">256:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>					&lt <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 257" class="Class_LineNumber">257:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 258" class="Class_LineNumber">258:	|</span>	<span class="Class_CommentTagWord">		// Provice hint message</span>
+<span title="Script line: 259" class="Class_LineNumber">259:	|</span>			println!<span class="Class_BracketsLVL0">(</span><span class="Class_String">"\n***********************\n<span class="Class_BracketsLVL1">(</span>NOTE<span class="Class_BracketsLVL1">)</span>:\tNo arguments give; exiting program <span class="Class_BracketsLVL0">[</span>EXIT CODE: <span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>\n\tType \"-h\"/\"-help\" to see program options."</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 260" class="Class_LineNumber">260:	|</span>	
+<span title="Script line: 261" class="Class_LineNumber">261:	|</span>	<span class="Class_CommentTagWord">		// Program EXIT - __--1 - Program received no arguments--__&ltLM></span>
+<span title="Script line: 262" class="Class_LineNumber">262:	|</span>			exit<span class="Class_BracketsLVL0">(</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 263" class="Class_LineNumber">263:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 264" class="Class_LineNumber">264:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 265" class="Class_LineNumber">265:	|</span>	
+<span title="Script line: 266" class="Class_LineNumber">266:	|</span>	<span class="Class_CommentTagWord">	// Shows help message via ['F_ShowHelp_RNil'] function, if first argument is "-h" or "-help"&ltS>:</span>
+<span title="Script line: 267" class="Class_LineNumber">267:	|</span>		<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>		== <span class="Class_String">"-h"</span> || PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">1</span><span class="Class_BracketsLVL0">]</span>.to_lower<span class="Class_LogicKeyWord">case</span><span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span>	== <span class="Class_String">"-help"</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 268" class="Class_LineNumber">268:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 269" class="Class_LineNumber">269:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>PAR_Arguments_StrVec.len<span class="Class_BracketsLVL1">(</span><span class="Class_BracketsLVL1">)</span> > <span class="Class_Number">2</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 270" class="Class_LineNumber">270:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 271" class="Class_LineNumber">271:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span>&PAR_Arguments_StrVec<span class="Class_BracketsLVL0">[</span><span class="Class_Number">2</span><span class="Class_BracketsLVL0">]</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 272" class="Class_LineNumber">272:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 273" class="Class_LineNumber">273:	|</span>			<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">else</span></span>
+<span title="Script line: 274" class="Class_LineNumber">274:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 275" class="Class_LineNumber">275:	|</span>				F_ShowHelp_RNil<span class="Class_BracketsLVL0">(</span><span class="Class_String">""</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 276" class="Class_LineNumber">276:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 277" class="Class_LineNumber">277:	|</span>			
+<span title="Script line: 278" class="Class_LineNumber">278:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 279" class="Class_LineNumber">279:	|</span>	<span class="Class_CommentTagWord">	//:&ltS></span>
+<span title="Script line: 280" class="Class_LineNumber">280:	|</span>	
+<span title="Script line: 281" class="Class_LineNumber">281:	|</span>	<span class="Class_CommentTagWord">	// Loops via rest of the arguments&ltLM></span>
+<span title="Script line: 282" class="Class_LineNumber">282:	|</span>		<span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">for</span></span> I_Argument <span class="Class_LogicKeyWord"><span class="Class_LogicKeyWord">in</span></span> PAR_Arguments_StrVec
+<span title="Script line: 283" class="Class_LineNumber">283:	|</span>		<span class="Class_BracketsLVL0">{</span>
+<span title="Script line: 284" class="Class_LineNumber">284:	|</span>	<span class="Class_CommentTagWord">		// If ``render`` is found as argument, launch debuging rendering window&ltS>:</span>
+<span title="Script line: 285" class="Class_LineNumber">285:	|</span>			<span class="Class_LogicKeyWord">if</span><span class="Class_BracketsLVL0">(</span>I_Argument	== <span class="Class_String">"render"</span><span class="Class_BracketsLVL0">)</span>
+<span title="Script line: 286" class="Class_LineNumber">286:	|</span>			<span class="Class_BracketsLVL1">{</span>
+<span title="Script line: 287" class="Class_LineNumber">287:	|</span>				main::Renderer<span class="Class_BracketsLVL0">(</span><span class="Class_BracketsLVL0">)</span>;
+<span title="Script line: 288" class="Class_LineNumber">288:	|</span>			<span class="Class_BracketsLVL1">}</span>
+<span title="Script line: 289" class="Class_LineNumber">289:	|</span>	<span class="Class_CommentTagWord">		//:&ltS></span>
+<span title="Script line: 290" class="Class_LineNumber">290:	|</span>		<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 291" class="Class_LineNumber">291:	|</span>	<span class="Class_BracketsLVL0">}</span>
+<span title="Script line: 292" class="Class_LineNumber">292:	|</span>	<span class="Class_CommentTagWord">//---</span>
 </code></pre>
 <pre><code>
 Documented with IVN Documenter
-Documented at: 08.06.2025 19:29:35
+Documented at: 02.07.2025 00:00:23
 <hr>© IVN - Iterik Viscela Nova, © Matěj Zahradník, © IVN Documenter
-IVN Documenter - 0.01.13.U | 0.04.034.D
+IVN Documenter - 0.01.14.U | 0.04.035.D
 !!DO NOT REMOVE THIS INFORMATION LINE!!
-</code></pre></div><div style="position: fixed;display: flex;flex-direction: column;gap: 0.5vh;top: 0;left: 0;height: 100%;width: 10%;background-color: #1B2A35;overflow-x: scroll;scrollbar-width: 0.5vh;scrollbar-color: #5607F5;"><a class="HeaderLVL1" title="Copliler messages" href="#Copliler_messages">Copliler messages</a><a class="HeaderLVL1" title="Package and Import statements" href="#Package_and_Import_statements">Package and Import statements</a><a class="HeaderLVL1" title="ENUMs / STRUCs" href="#ENUMs_/_STRUCs">ENUMs / STRUCs</a><a class="HeaderLVL1" title="Program Variables" href="#Program_Variables">Program Variables</a><a class="HeaderLVL1" title="Trigger Functions" href="#Trigger_Functions">Trigger Functions</a><a class="HeaderLVL2" title="F_ShowHelp_RNil" href="#F_ShowHelp_RNil">F_ShowHelp_RNil</a><a class="HeaderLVL1" title="AUTORUN Functions" href="#AUTORUN_Functions">AUTORUN Functions</a><a class="HeaderLVL2" title="main" href="#main">main</a></body>
+</code></pre></div><div style="position: fixed;display: flex;flex-direction: column;gap: 0.5vh;top: 0;left: 0;height: 100%;width: 10%;background-color: #1B2A35;overflow-x: scroll;scrollbar-width: 0.5vh;scrollbar-color: #5607F5;"><a class="HeaderLVL1" title="Compliler messages" href="#Compliler_messages">Compliler messages</a><a class="HeaderLVL1" title="Package and Import statements" href="#Package_and_Import_statements">Package and Import statements</a><a class="HeaderLVL1" title="ENUMs / STRUCs" href="#ENUMs_/_STRUCs">ENUMs / STRUCs</a><a class="HeaderLVL1" title="Program Variables" href="#Program_Variables">Program Variables</a><a class="HeaderLVL1" title="Trigger Functions" href="#Trigger_Functions">Trigger Functions</a><a class="HeaderLVL2" title="F_ShowHelp_RNil" href="#F_ShowHelp_RNil">F_ShowHelp_RNil</a><a class="HeaderLVL1" title="AUTORUN Functions" href="#AUTORUN_Functions">AUTORUN Functions</a><a class="HeaderLVL2" title="main" href="#main">main</a></body>
 </html>
