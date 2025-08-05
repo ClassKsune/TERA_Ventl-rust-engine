@@ -10,7 +10,7 @@ readme = "./README.md"
 description = "In developmen RUST engine"
 documentation = "https://engine.iterikviscelanova.com/FLD_Documentation/" # May need to create a proper website - tercial task
 license = "MIT" # I think - We need to discuss this @ClassKsune
-links = "https://github.com/ClassKsune/TERA_Ventl-rust-engine"
+#links = "https://github.com/ClassKsune/TERA_Ventl-rust-engine"
 
 
 [lib]

@@ -522,10 +522,9 @@ impl Object2D
 			Vector2,PAR_Size_Vec2,2D Vector increasing size of this instance
 	:<T>:<F>
 	<S>:*/
-	pub fn ReLocate_To(PAR_Instance_Object2D: Object2D, PAR_Size_Vec2: Vector2)
+	pub fn ReLocate_To(&mut self, PAR_Size_Vec2: Vector2)
 	{
-		self.Size.X	= self.Size.X+PAR_Size_Vec2.X;
-		self.Size.Y	= self.Size.Y+PAR_Size_Vec2.Y;
+		self.Position	= PAR_Size_Vec2;
 	}
 	//:<S>
 	//---
@@ -688,7 +687,7 @@ impl Primitive3D
 	<S>:*/
 	pub fn New(PAR_Pos_Vec3: Vector3, PAR_Shape_E: Primitive3DShape) -> Primitive3D
 	{
-		Primitive3D { Base: Object3D::New(PAR_Pos_Vec3), Shape: PAR_Shape_E, Color: Color::New(255, 255, 255, 0) }
+		Primitive3D { Base: Object3D::New(PAR_Pos_Vec3), Shape: PAR_Shape_E, Color: Color::New_FromRGB(255, 255, 255, 0) }
 	}
 	//:<S>
 	//---
@@ -705,7 +704,7 @@ impl Primitive3D
 	<S>:*/
 	pub fn New_Base(PAR_Base_Object3D: Object3D, PAR_Shape_E: Primitive3DShape) -> Primitive3D
 	{
-		Primitive3D { Base: PAR_Base_Object3D, Shape: PAR_Shape_E, Color: Color::New(255, 255, 255, 0) }
+		Primitive3D { Base: PAR_Base_Object3D, Shape: PAR_Shape_E, Color: Color::New_FromRGB(255, 255, 255, 0) }
 	}
 	//:<S>
 	//---
